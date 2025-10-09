@@ -17,19 +17,6 @@
     
     
     <entry>
-      <title>test</title>
-      <link href="/2025/10/08/test/"/>
-      <url>/2025/10/08/test/</url>
-      
-        <content type="html"><![CDATA[<p>111<br>$$<br>\begin{array}{c}<br>\text{工作量主要完成人数} &#x3D;<br>n^{ \frac{e^{k \cdot S} - 1}{e^{k} - 1}}<br> \quad \text{其中} \quad<br>S &#x3D; \frac{(1-\beta) + \gamma + (1-\delta)+\alpha}{4}</p><p>\<br>\alpha ∈[0,1]：亲密度系数<br>\<br>\beta ∈[0,1]：任务复杂度系数<br>\<br>\gamma ∈[0,1]：整体能力系数<br>\<br>\delta ∈[0,1]：协作阻力系数<br>\<br>k为激进调整值，默认为2\<br>若需激进协作：增大 k，使高效协作时指数更快逼近 α。\<br>若需保守协作：减小 k，减缓指数增长。<br>\end{array}</p><p>$$</p><p>例子（旧例子）：<br><strong>极端场景测试</strong><br>1.（简单任务、高能力、低阻力、组员互相非常熟悉）：<br>$\beta &#x3D;0,\gamma&#x3D;1,\delta&#x3D;0,n&#x3D;10,a&#x3D;1$<br>$$<br>\begin{aligned}<br>S &#x3D; \frac{(1-\beta) + \gamma + (1-\delta)}{3}&#x3D;\frac{(1-0)+1+(1-0)}{3}&#x3D;1\<br>N_{负责人数}&#x3D;<br>n^{\alpha \cdot \frac{e^{k \cdot S} - 1}{e^{k} - 1}} &#x3D;10^{1 \cdot \frac{e^{k \cdot 1} - 1}{e^{k} - 1}}<br> &#x3D;10<br>\end{aligned}<br>$$<br>2.(复杂任务&#x2F;低能力&#x2F;高阻力)</p><p>$\beta &#x3D;1,\gamma&#x3D;0,\delta&#x3D;1,n&#x3D;10$<br>$$<br>\begin{aligned}<br>S &#x3D; \frac{(1-\beta) + \gamma + (1-\delta)}{3}&#x3D;\frac{(1-1)+0+(1-1)}{3}&#x3D;0\<br>N_{负责人数}&#x3D;<br>n^{\alpha \cdot \frac{e^{k \cdot S} - 1}{e^{k} - 1}} &#x3D;10^{\alpha \cdot \frac{e^{k \cdot 0} - 1}{e^{k} - 1}}<br>  &#x3D;0<br>无论\alpha 为多少都为0<br>\end{aligned}<br>$$<br>3.（实际案例：区块链项目）<br>$\beta&#x3D;0.3,\gamma&#x3D;0.4,\delta&#x3D;0.7,n&#x3D;7,\alpha&#x3D;0.8$<br>$$<br>\begin{aligned}<br>S&#x3D;0.667\<br>N&#x3D;2<br>\end{aligned}<br>$$</p><p>计算机导引</p><p>$n&#x3D;3,\alpha&#x3D;0.9,\beta&#x3D;0.5,\gamma&#x3D;0.7,\delta&#x3D;0.1,k&#x3D;2$<br>代入：<br>$n^{, \alpha \cdot \frac{e^{k \cdot S} - 1}{e^{k} - 1}}  \quad \text{其中} \quad S &#x3D; \frac{(1-\beta) + \gamma + (1-\delta)}{3}$</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>信息安全数学基础考试后</title>
       <link href="/2025/10/08/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%80%83%E8%AF%95%E6%9C%89%E6%84%9F/"/>
       <url>/2025/10/08/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%80%83%E8%AF%95%E6%9C%89%E6%84%9F/</url>
