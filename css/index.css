@@ -1504,7 +1504,7 @@ a:hover {
 .site-name,
 #aside-content .author-info-name,
 #aside-content .author-info-description {
-  font-family: var(--global-font);
+  font-family: consolas;
 }
 .is-center {
   text-align: center;
