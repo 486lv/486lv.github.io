@@ -1367,6 +1367,7 @@ canvas:not(#ribbon-canvas),
   --default-bg-color: #49b1f5;
   --zoom-bg: #fff;
   --mark-bg: rgba(0,0,0,0.3);
+  --monkey-card-bg: rgba(18,18,18,0.6);
 }
 body {
   position: relative;
@@ -3955,6 +3956,9 @@ figure.highlight pre .javascript .function {
 #article-container hr {
   margin: 20px 0;
 }
+#post {
+  background: var(--monkey-card-bg);
+}
 #post .tag_share:after {
   display: block;
   clear: both;
@@ -5845,6 +5849,7 @@ blockquote.pullquote.right {
   --timeline-bg: #1f1f1f;
   --zoom-bg: #121212;
   --mark-bg: rgba(0,0,0,0.6);
+  --monkey-card-bg: $monkey-dark-card-bg;
 }
 [data-theme='dark'] #web_bg:before {
   position: absolute;
