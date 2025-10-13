@@ -3957,7 +3957,15 @@ figure.highlight pre .javascript .function {
   margin: 20px 0;
 }
 #post {
-  background: var(--monkey-card-bg);
+  background: rgba(255,255,255,0.85) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 12px;
+  margin: 20px 0;
+  padding: 20px;
+}
+[data-theme="dark"] #post {
+  background: rgba(0,0,0,0.85) !important;
 }
 #post .tag_share:after {
   display: block;
