@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据库 | Thorn's blog</title><meta name="author" content="Thorn"><meta name="copyright" content="Thorn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、概述 1.基本概念   数据 是记录下来可以被鉴别的符号， 它是最原始的素材（如数字、文字、图像、符号等） ， 未被加工解释， 没有回答特定的问题。 数据的特点： 数据与其语义是不可分的   数据库（ Database， 简称 DB） 长期储存在计算机内、有组织的、可共享的大量数据集合。   数据库管理系统（DataBase Management System，DBMS） 一种能让用户定义、创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库">
+<meta property="og:url" content="http://example.com/2024/11/13/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="Thorn&#39;s blog">
+<meta property="og:description" content="一、概述 1.基本概念   数据 是记录下来可以被鉴别的符号， 它是最原始的素材（如数字、文字、图像、符号等） ， 未被加工解释， 没有回答特定的问题。 数据的特点： 数据与其语义是不可分的   数据库（ Database， 简称 DB） 长期储存在计算机内、有组织的、可共享的大量数据集合。   数据库管理系统（DataBase Management System，DBMS） 一种能让用户定义、创">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/13.jpg">
+<meta property="article:published_time" content="2024-11-13T12:45:00.000Z">
+<meta property="article:modified_time" content="2025-11-13T08:53:11.040Z">
+<meta property="article:author" content="Thorn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/13.jpg"><link rel="shortcut icon" href="/images/9top.jpg"><link rel="canonical" href="http://example.com/2024/11/13/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><link rel="stylesheet" href="/-apple-system" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"Author: Thorn","link":"Link: ","source":"Source: Thorn's blog","info":"Copyright belongs to the author. For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据库',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-11-13 16:53:11'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5.12/index.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg" style="background-image: url(/images/9top.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/30head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-archive"></i><span> Archive</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-list"></i><span> Timeline</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Category</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-face-smile"></i><span> Life</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/footprints/"><i class="fa-fw fas fa-heart"></i><span> Footprints</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About&amp;Comment</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-globe"></i><span> My Sites</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://huggingface.co/spaces/icebreaker4/uestc-shuishou"><i class="fa-fw fas fa-external-link-alt"></i><span> UESTC水手之家</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/13.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Thorn's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">数据库</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-archive"></i><span> Archive</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-list"></i><span> Timeline</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Category</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-face-smile"></i><span> Life</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/footprints/"><i class="fa-fw fas fa-heart"></i><span> Footprints</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About&amp;Comment</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-globe"></i><span> My Sites</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://huggingface.co/spaces/icebreaker4/uestc-shuishou"><i class="fa-fw fas fa-external-link-alt"></i><span> UESTC水手之家</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">数据库<a class="post-edit-link" href="null_posts/数据库.md" title="Edit" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-13T12:45:00.000Z" title="Created 2024-11-13 20:45:00">2024-11-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-11-13T08:53:11.040Z" title="Updated 2025-11-13 16:53:11">2025-11-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>3mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一-概述">一、概述</h2>
+<h2 id="1-基本概念">1.基本概念</h2>
+<ul>
+<li>
+<p><mark style="background: #FFF3A3A6;">数据</mark><br>
+是记录下来可以被鉴别的符号， 它是最原始的素材（如数字、文字、图像、符号等） ， 未被加工解释， 没有回答特定的问题。<br>
+数据的特点： <u>数据与其语义是不可分的</u></p>
+</li>
+<li>
+<p><mark style="background: #FFF3A3A6;">数据库</mark>（ Database， 简称 DB）<br>
+长期储存在计算机内、有组织的、可共享的大量数据集合。</p>
+</li>
+<li>
+<p><mark style="background: #FFF3A3A6;">数据库管理系统</mark>（DataBase Management System，DBMS）<br>
+一种能让用户定义、创建和维护数据库， 以及控制对数据库访问的软件系统。<br>
+DBMS组成： 查询处理器和存储管理器。<br>
+DBMS功能 ：数据库定义功能、数据操纵功能、数据库运行控制功能、数据库的恢复、数据字典<br>
+<img src="/images/Pasted%20image%2020251015205044.png" alt></p>
+</li>
+<li>
+<p>数据库系统（Database System，简称DBS）<br>
+指在计算机系统中引入数据库后的系统构成。<br>
+组成：<br>
+硬件系统、数据库集合、数据库管理系统及相关软件、数据库管理员（DBA）、用户</p>
+</li>
+</ul>
+<p><img src="/images/Pasted%20image%2020251015201058.png" alt></p>
+<p><strong><mark style="background: #FFB8EBA6;">DBS包括DB和DBMS!</mark></strong></p>
+<h2 id="实体与表">实体与表</h2>
+<ul>
+<li>
+<p>实体<br>
+一个实体可以是一个人、一个事件或一个我们将要为其收集数据的物体。<br>
+每个实体都有某些称为属性的特征</p>
+</li>
+<li>
+<p>表<br>
+表是二维结构，它包括行和列。一个表包括一组相关的实体——实体集。<br>
+每个表必须有一个属性或者一个属性复合体来唯一标识每一行。<br>
+<img src="/images/Pasted%20image%2020251015210505.png" alt></p>
+</li>
+<li>
+<p>数据列表<br>
+关系数据库使用表来组织数据元素<br>
+每一个表对应于一个应用实体集，而每行则代表实体的一个实体。（图书馆管理系统中图书实体集对应数据库中的Book表，该表中的每一行则代表不同的书。）<br>
+实体和实体之间的关系被抽象为联系。（例如：一个“图书表”的行标识符（书籍编号）出现在一个“借阅表”的行中，从而建立了借阅与图书之间的联系。）<br>
+这种表之间通过属性进行联系，构成了关系列表，是关系数据库</p>
+</li>
+</ul>
+<h2 id="数据库系统组成构成">数据库系统组成构成</h2>
+<ul>
+<li>模式结构<br>
+一个数据库只有一个模式。<br>
+3层模式体系结构：<br>
+<mark style="background: #FFF3A3A6;">内模式</mark>：（只有一个）是数据物理结构和存储方式的描述，数据在数据库内部的表示方式。<br>
+<mark style="background: #FFF3A3A6;">模式</mark>：（逻辑模式，概念模式，只有一个）数据的逻辑结构，数据之间的联系，所有用户的公共数据视图。<br>
+<mark style="background: #FFF3A3A6;">外模式</mark>：（视图，可以有多个）用户看到的样子/数据库用户（包括应用程序员和最终用户）使用的局部数据的逻辑结构和特征的描述。</li>
+</ul>
+<p><img src="/images/Pasted%20image%2020251015212344.png" alt><br>
+<img src="/images/Pasted%20image%2020251015213514.png" alt><br>
+举个形象的例子：</p>
+<pre><code>内模式（物理存储）:
+图书在书架上的实际摆放方式
+图书索引卡片的物理存储
+借阅记录的存储文件格式
+
+模式（整体设计）:
+图书信息表（书名、作者、ISBN、出版社）
+读者信息表（姓名、学号、联系方式）
+借阅记录表（借书时间、还书时间）
+这些表之间的关系
+
+外模式（用户视图）:
+学生看到的：可借图书列表、个人借阅记录
+管理员看到的：所有借阅统计、图书库存管理
+教师看到的：推荐书目、专业书籍分类
+</code></pre>
+<ul>
+<li>
+<p>外模式/模式映射：<br>
+定义外模式与模式之间的对应关系，每一个外模式都对应一个外模式／模式映象。<br>
+当模式改变时， DBA修改有关的外模式／模式映象，使外模式保持不变。（逻辑独立性——<mark style="background: #BBFABBA6;">外部模式不受模式变化影响</mark>）</p>
+</li>
+<li>
+<p>模式/内模式映射：<br>
+模式／内模式映象定义了数据全局逻辑结构与存储结构之间的对应关系。数据库中模式／内模式映象是唯一的。<br>
+当数据库的存储结构改变了（例如选用了另一种存储结构），数据库管理员修改模式／内模式映象，使模式保持不变。（物理独立性——<mark style="background: #BBFABBA6;">模式不受内部模式变化的影响</mark>）</p>
+</li>
+</ul>
+<p>两级独立性：逻辑独立性和物理独立性。</p>
+<ul>
+<li>工作过程</li>
+</ul>
+<p><img src="/images/Pasted%20image%2020251015214523.png" alt><br>
+<img src="/images/Pasted%20image%2020251015214533.png" alt></p>
+<h1 id="二-关系数据模型与关系代数">二、关系数据模型与关系代数</h1>
+<ul>
+<li>数据模型</li>
+</ul>
+<p>对现实世界数据特征的抽象和对现实世界的模拟。<br>
+分类（不同层次）：<br>
+概念模型：常用E-R图表达，用来描述现实世界的概念化结构，与具体DBMS无关<br>
+逻辑模型：<br>
+物理模型：</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Thorn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/11/13/%E6%95%B0%E6%8D%AE%E5%BA%93/">http://example.com/2024/11/13/%E6%95%B0%E6%8D%AE%E5%BA%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/images/13.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="prev-post pull-left" href="/2025/10/22/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C/" title="信息安全数学基础实验"><img class="cover" src="/images/xinxianquanshuxuejichu.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">信息安全数学基础实验</div></div></a><a class="next-post pull-right" href="/2024/11/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" title="编译原理"><img class="cover" src="/images/bianyiyuanli.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">编译原理</div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/images/30head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Thorn</div><div class="author-info-description">Sunshine Thorn</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/486lv"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/486lv" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lvlebin367@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">1.基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E4%B8%8E%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text">实体与表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%BB%84%E6%88%90%E6%9E%84%E6%88%90"><span class="toc-number">4.</span> <span class="toc-text">数据库系统组成构成</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="toc-number"></span> <span class="toc-text">二、关系数据模型与关系代数</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/11/16/%E4%BB%BB%E5%8A%A1/" title="任务"><img src="/images/17.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="任务"/></a><div class="content"><a class="title" href="/2025/11/16/%E4%BB%BB%E5%8A%A1/" title="任务">任务</a><time datetime="2025-11-15T16:00:00.000Z" title="Created 2025-11-16 00:00:00">2025-11-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/25/21%E5%B2%81%E7%94%9F%E6%97%A5%E5%AF%84%E8%AF%AD/" title="21岁生日"><img src="/images/dfd7c3a88f37d37846aa98fe52a30a0d_720.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="21岁生日"/></a><div class="content"><a class="title" href="/2025/10/25/21%E5%B2%81%E7%94%9F%E6%97%A5%E5%AF%84%E8%AF%AD/" title="21岁生日">21岁生日</a><time datetime="2025-10-25T14:55:15.000Z" title="Created 2025-10-25 22:55:15">2025-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/22/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C/" title="信息安全数学基础实验"><img src="/images/xinxianquanshuxuejichu.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="信息安全数学基础实验"/></a><div class="content"><a class="title" href="/2025/10/22/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C/" title="信息安全数学基础实验">信息安全数学基础实验</a><time datetime="2025-10-22T11:29:30.000Z" title="Created 2025-10-22 19:29:30">2025-10-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/13/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库"><img src="/images/13.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库"/></a><div class="content"><a class="title" href="/2024/11/13/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库">数据库</a><time datetime="2024-11-13T12:45:00.000Z" title="Created 2024-11-13 20:45:00">2024-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" title="编译原理"><img src="/images/bianyiyuanli.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理"/></a><div class="content"><a class="title" href="/2024/11/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" title="编译原理">编译原理</a><time datetime="2024-11-13T12:45:00.000Z" title="Created 2024-11-13 20:45:00">2024-11-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/images/13.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Thorn</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (false){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-omega-virid.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-omega-virid.vercel.app',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="0,1,future,day,better,ice,ahmlv,sunshine,thorn,life,love" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('gitZone');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('gitZone') && (location.pathname ==='/about/'|| '/about/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("python-github-calendar-api-7mn7.vercel.app/api?486lv",['#d9e0df', '#c6e0dc', '#a8dcd4', '#9adcd2', '#89ded1', '#77e0d0', '#5fdecb', '#47dcc6', '#39dcc3', '#1fdabe', '#00dab9'],'486lv')
+    }
+  </script><!-- hexo injector body_end end --></body></html>
