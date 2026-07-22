@@ -1277,7 +1277,6 @@ template {
   --default-bg-color: #0a0a0a;
   --zoom-bg: #fff;
   --mark-bg: rgba(0,0,0,0.3);
-  --monkey-card-bg: rgba(18,18,18,0.6);
 }
 body {
   position: relative;
@@ -3836,17 +3835,6 @@ figure.highlight pre .javascript .function {
 #article-container hr {
   margin: 20px 0;
 }
-#post {
-  background: rgba(255,255,255,0.85) !important;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 12px;
-  margin: 20px 0;
-  padding: 20px;
-}
-[data-theme="dark"] #post {
-  background: rgba(0,0,0,0.85) !important;
-}
 #post .tag_share:after {
   display: block;
   clear: both;
@@ -5707,7 +5695,6 @@ blockquote.pullquote.right {
   --timeline-bg: #1f1f1f;
   --zoom-bg: #121212;
   --mark-bg: rgba(0,0,0,0.6);
-  --monkey-card-bg: $monkey-dark-card-bg;
 }
 [data-theme='dark'] #web_bg:before {
   position: absolute;
