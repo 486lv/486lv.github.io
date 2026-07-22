@@ -1,0 +1,17 @@
+[data-theme="dark"] #page-header #nav,
+[data-theme="dark"] #page-header.full_page,
+[data-theme="dark"] #page-header.not-home-page,
+[data-theme="dark"] #page-header.post-bg { background-color: var(--mono-bg) !important; }
+
+[data-theme="dark"] img:not([src$=".svg"]) { opacity: .92; }
+[data-theme="dark"] #article-container img:hover { opacity: 1; }
+
+[data-theme="dark"] .search-dialog,
+[data-theme="dark"] #local-search .search-dialog {
+  color: var(--mono-text);
+  background: var(--mono-surface) !important;
+  border: 1px solid var(--mono-border);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea { color: var(--mono-text); background: var(--mono-bg); border-color: var(--mono-border); }
