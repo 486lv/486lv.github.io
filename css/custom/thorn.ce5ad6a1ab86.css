@@ -742,6 +742,10 @@ body.home-reveal-enabled #recent-posts .recent-post-item:not(.reveal-is-visible)
 #article-container blockquote p { margin: 0; color: inherit; }
 
 #article-container img {
+  width: auto;
+  height: auto !important;
+  max-width: 100%;
+  object-fit: contain;
   border: 1px solid var(--mono-border);
   border-radius: var(--mono-radius-sm);
   box-shadow: none;
