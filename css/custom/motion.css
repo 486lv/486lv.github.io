@@ -120,4 +120,11 @@ body.is-page-entering #page-header #site-info { opacity: 0; }
   .playlist-grid a:hover strong,
   .pagination-post a:hover,
   .flink-list-item:hover { transform: none !important; }
+  .about-signal-ring,
+  .about-scroll-cue span::after,
+  .reaction-lab[data-state="waiting"] .reaction-grid { animation: none !important; }
+  .about-timeline li,
+  .about-projects article { opacity: 1 !important; transform: none !important; }
+  .reaction-lab,
+  .reaction-lab:hover { transform: none !important; transition: background 150ms ease !important; }
 }

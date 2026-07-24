@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Playground | Thorn's blog</title><meta name="author" content="Thorn"><meta name="copyright" content="Thorn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="PLAYGROUND &#x2F; 006别只路过，玩一下。 从反应实验到经典街机。所有成绩与对局记录只保存在你的浏览器里。   SELECT A GAMELOCAL RECORDS &#x2F; THIS DEVICE  01SPEED反应速度等待信号，然后尽快击中。BEST—MS→   02MEMORY序列记忆观察、记住，然后复现序列。BEST00LEVEL→   03COORDINATION限时瞄准十五秒内">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Playground">
+<meta property="og:url" content="https://486lv.github.io/playground/index.html">
+<meta property="og:site_name" content="Thorn&#39;s blog">
+<meta property="og:description" content="PLAYGROUND &#x2F; 006别只路过，玩一下。 从反应实验到经典街机。所有成绩与对局记录只保存在你的浏览器里。   SELECT A GAMELOCAL RECORDS &#x2F; THIS DEVICE  01SPEED反应速度等待信号，然后尽快击中。BEST—MS→   02MEMORY序列记忆观察、记住，然后复现序列。BEST00LEVEL→   03COORDINATION限时瞄准十五秒内">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://486lv.github.io/images/24.jpg">
+<meta property="article:published_time" content="2026-07-24T10:32:00.276Z">
+<meta property="article:modified_time" content="2026-07-24T10:32:00.276Z">
+<meta property="article:author" content="Thorn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://486lv.github.io/images/24.jpg"><link rel="shortcut icon" href="/images/top-poster-icon.png"><link rel="canonical" href="https://486lv.github.io/playground/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="/vendor/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+          
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Thorn","link":"链接: ","source":"来源: Thorn's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Playground',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2026-07-24 18:32:00'
+}</script><link rel="stylesheet" href="/css/custom/thorn.c0912ac88b57.css"><!-- hexo injector head_end start --><style id="thorn-appearance">:root{--mono-radius:16px;--mono-radius-sm:12px;--mono-radius-lg:20px;--mono-transition:220ms cubic-bezier(.2,.65,.3,1);--mono-post-spacing:44px;--mono-hero-height:680px}</style><script>(function(){var d=document.documentElement;d.dataset.motion="normal";var c="system";if(c==='light'||c==='dark')d.dataset.theme=c;})();</script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="/vendor/katex/katex.min.css"></head><body><div id="web_bg" style="background-color: #ffffff;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img width="1089" height="1080" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/30head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> Archive</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-list"></i><span> Timeline</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Category</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> Explore</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> Video</span></a></li><li><a class="site-page child" href="/footprints/"><i class="fa-fw fas fa-location-dot"></i><span> Footprints</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-globe"></i><span> Sites</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/playground/"><i class="fa-fw fas fa-gamepad"></i><span> Playground</span></a></li><li><a class="site-page child" target="_blank" rel="noopener noreferrer" href="https://huggingface.co/spaces/icebreaker4/uestc-shuishou"><i class="fa-fw fas fa-external-link-alt"></i><span> UESTC水手之家</span></a></li></ul></div></div></div></div><div class="page type-playground" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Thorn's blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> Archive</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-list"></i><span> Timeline</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Category</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> Explore</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> Video</span></a></li><li><a class="site-page child" href="/footprints/"><i class="fa-fw fas fa-location-dot"></i><span> Footprints</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-globe"></i><span> Sites</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/playground/"><i class="fa-fw fas fa-gamepad"></i><span> Playground</span></a></li><li><a class="site-page child" target="_blank" rel="noopener noreferrer" href="https://huggingface.co/spaces/icebreaker4/uestc-shuishou"><i class="fa-fw fas fa-external-link-alt"></i><span> UESTC水手之家</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">Playground</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">Playground</div><div id="article-container"><section class="home-playground playground-page">
+<header>
+<div><span>PLAYGROUND / 006</span><h1>别只路过，玩一下。</h1></div>
+<p>从反应实验到经典街机。所有成绩与对局记录只保存在你的浏览器里。</p>
+</header>
+<div class="arcade-hub" aria-label="游戏大厅">
+<div class="arcade-hub-head"><span>SELECT A GAME</span><span>LOCAL RECORDS / THIS DEVICE</span></div>
+<button class="arcade-card" type="button" data-open-game="reaction">
+<span class="arcade-number">01</span><div><small>SPEED</small><h2>反应速度</h2><p>等待信号，然后尽快击中。</p></div><div class="arcade-record"><span>BEST</span><b data-record="reaction">—</b><small>MS</small></div><i>→</i>
+</button>
+<button class="arcade-card" type="button" data-open-game="memory">
+<span class="arcade-number">02</span><div><small>MEMORY</small><h2>序列记忆</h2><p>观察、记住，然后复现序列。</p></div><div class="arcade-record"><span>BEST</span><b data-record="memory">00</b><small>LEVEL</small></div><i>→</i>
+</button>
+<button class="arcade-card" type="button" data-open-game="aim">
+<span class="arcade-number">03</span><div><small>COORDINATION</small><h2>限时瞄准</h2><p>十五秒内击中尽可能多的目标。</p></div><div class="arcade-record"><span>BEST</span><b data-record="aim">0</b><small>HITS</small></div><i>→</i>
+</button>
+<button class="arcade-card" type="button" data-open-game="snake">
+<span class="arcade-number">04</span><div><small>CLASSIC</small><h2>贪吃蛇</h2><p>吃掉信号，避开边界和自己。</p></div><div class="arcade-record"><span>BEST</span><b data-record="snake">0</b><small>PTS</small></div><i>→</i>
+</button>
+<button class="arcade-card" type="button" data-open-game="tetris">
+<span class="arcade-number">05</span><div><small>CLASSIC</small><h2>俄罗斯方块</h2><p>旋转、堆叠，完成整行消除。</p></div><div class="arcade-record"><span>BEST</span><b data-record="tetris">0</b><small>LINES</small></div><i>→</i>
+</button>
+<button class="arcade-card" type="button" data-open-game="gomoku">
+<span class="arcade-number">06</span><div><small>BOARD</small><h2>五子棋</h2><p>本地双人对局，先连成五子者胜。</p></div><div class="arcade-record"><span>WINS</span><b data-record="gomoku">0</b><small>BLACK</small></div><i>→</i>
+</button>
+</div>
+<div class="arcade-game-view" hidden>
+<button class="arcade-back" type="button">← 返回游戏大厅</button>
+<article class="game-module game-reaction" data-game="reaction" hidden>
+<div class="game-module-head"><div><span>GAME 01</span><h2>反应速度</h2></div><p>等待信号变绿。不要抢跑。</p></div>
+<div class="reaction-lab" data-state="idle" tabindex="0" role="button" aria-label="开始反应力测试">
+<div class="reaction-grid" aria-hidden="true"></div>
+<div class="reaction-copy"><span class="reaction-status">READY?</span><strong>点击开始</strong><small>等待信号变亮后，尽快点击</small></div>
+<div class="reaction-score"><span>BEST</span><b>—</b><small>MS</small></div>
+</div>
+</article>
+<article class="game-module game-memory" data-game="memory" hidden>
+<div class="game-module-head"><div><span>GAME 02</span><h2>序列记忆</h2></div><p>记住亮起的顺序，然后完整复现。</p></div>
+<div class="memory-lab">
+<div class="memory-board" aria-label="序列记忆游戏面板">
+<button data-cell="0" aria-label="左上"></button><button data-cell="1" aria-label="右上"></button>
+<button data-cell="2" aria-label="左下"></button><button data-cell="3" aria-label="右下"></button>
+</div>
+<div class="game-console"><span>LEVEL</span><b class="memory-level">00</b><p class="memory-message">准备好后开始</p><button class="memory-start" type="button">开始游戏</button></div>
+</div>
+</article>
+<article class="game-module game-aim" data-game="aim" hidden>
+<div class="game-module-head"><div><span>GAME 03</span><h2>限时瞄准</h2></div><p>十五秒内，尽可能多地击中移动目标。</p></div>
+<div class="aim-lab" data-running="false">
+<button class="aim-target" type="button" aria-label="移动目标"></button>
+<div class="aim-idle"><b>15.0</b><span>SECONDS</span><button class="aim-start" type="button">开始挑战</button></div>
+<div class="aim-hud"><span>TIME <b class="aim-time">15.0</b></span><span>HITS <b class="aim-hits">0</b></span><span>BEST <b class="aim-best">0</b></span></div>
+</div>
+</article>
+<article class="game-module game-snake" data-game="snake" hidden>
+<div class="game-module-head"><div><span>GAME 04</span><h2>贪吃蛇</h2></div><p>方向键或 WASD 控制。每吃到一个目标得 10 分。</p></div>
+<div class="classic-shell"><canvas class="snake-canvas" width="600" height="600" aria-label="贪吃蛇游戏画布"></canvas><div class="classic-console"><span>SCORE <b class="snake-score">0</b></span><span>BEST <b class="snake-best">0</b></span><button class="snake-start" type="button">开始游戏</button><div class="direction-pad"><button data-dir="up">↑</button><button data-dir="left">←</button><button data-dir="down">↓</button><button data-dir="right">→</button></div></div></div>
+</article>
+<article class="game-module game-tetris" data-game="tetris" hidden>
+<div class="game-module-head"><div><span>GAME 05</span><h2>俄罗斯方块</h2></div><p>方向键移动，↑ 旋转，空格快速落下。</p></div>
+<div class="classic-shell tetris-shell"><canvas class="tetris-canvas" width="360" height="720" aria-label="俄罗斯方块游戏画布"></canvas><div class="classic-console"><span>LINES <b class="tetris-lines">0</b></span><span>BEST <b class="tetris-best">0</b></span><button class="tetris-start" type="button">开始游戏</button><div class="tetris-controls"><button data-action="left">←</button><button data-action="rotate">↻</button><button data-action="right">→</button><button data-action="drop">↓</button></div></div></div>
+</article>
+<article class="game-module game-gomoku" data-game="gomoku" hidden>
+<div class="game-module-head"><div><span>GAME 06</span><h2>五子棋</h2></div><p>本地双人轮流落子，黑方先手。</p></div>
+<div class="classic-shell gomoku-shell"><canvas class="gomoku-canvas" width="720" height="720" aria-label="五子棋棋盘"></canvas><div class="classic-console"><span>TURN <b class="gomoku-turn">黑</b></span><span>BLACK WINS <b class="gomoku-wins">0</b></span><p class="gomoku-message">点击棋盘落子</p><button class="gomoku-reset" type="button">重新开局</button></div></div>
+</article>
+</div>
+<footer><span>PLAY FAIR · STAY CURIOUS</span><span>EXPERIMENTS · ARCADE · BOARD</span></footer>
+</section>
+</div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B/"><span class="card-category-list-name">专业课程</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B2%81%E8%AE%B0/"><span class="card-category-list-name">岁记</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9D%82%E8%B0%88/"><span class="card-category-list-name">杂谈</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">算法笔记</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5/"><span class="card-category-list-name">编程实践</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/"><span class="card-category-list-name">面试</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%AB%98%E6%95%B0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">高数笔记</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+    <ul class="card-archive-list">
+  
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2026/07/">
+          <span class="card-archive-list-date">七月 2026</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2025/10/">
+          <span class="card-archive-list-date">十月 2025</span>
+          <span class="card-archive-list-count">2</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/11/">
+          <span class="card-archive-list-date">十一月 2024</span>
+          <span class="card-archive-list-count">2</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/10/">
+          <span class="card-archive-list-date">十月 2024</span>
+          <span class="card-archive-list-count">7</span>
+        </a>
+      </li>
+    </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">49.7k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-07-24T10:32:40.564Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By Thorn</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/vendor/fancybox/fancybox.umd.js"></script><script src="/vendor/lazyload/lazyload.iife.min.js"></script><div class="js-pjax"></div><script defer src="/js/minimal-home.js?v=bc049d3601da"></script><script defer src="/js/site-motion.js?v=c9925d068658"></script><script src="/vendor/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([href="/footprints/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script>window.__THORN_APPEARANCE__={"heroEyebrow":"THORN · NOTES & FIELDWORK","heroTitle":"Thorn's blog","heroSubtitle":"I will leave the suffering of a lifetime as my epitaph—to remember that I once bore it, and that I transcended it.","primaryActionLabel":"Read","primaryActionHref":"#content-inner","secondaryActionLabel":"About Me","secondaryActionHref":"/about/","showPrimaryAction":true,"showSecondaryAction":true,"cardDensity":"comfortable","motion":"normal","radius":16,"colorMode":"system","heroHeight":680};</script><!-- hexo injector body_end end --></body></html>

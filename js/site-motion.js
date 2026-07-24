@@ -261,6 +261,56 @@
     sections.forEach(function (section) { observer.observe(section); });
   }
 
+  function updateAboutStory() {
+    var story = document.querySelector('.about-story');
+    if (!story) return;
+    var rect = story.getBoundingClientRect();
+    var travel = Math.max(1, story.offsetHeight - window.innerHeight);
+    var progress = Math.min(1, Math.max(0, -rect.top / travel));
+    story.style.setProperty('--about-progress', progress.toFixed(4));
+    var inStory = rect.bottom > window.innerHeight * .12 && rect.top < window.innerHeight * .88;
+    story.style.setProperty('--stage-opacity', inStory ? '1' : '0');
+    var marker = story.querySelector('.about-story-progress span');
+    var activeIndex = '00';
+    var activeLabel = 'PROFILE';
+    var viewportLine = window.innerHeight * .48;
+    story.querySelectorAll('.about-story-step').forEach(function (step) {
+      var stepRect = step.getBoundingClientRect();
+      var local = Math.min(1, Math.max(0, (viewportLine - stepRect.top) / Math.max(1, stepRect.height * .7)));
+      step.style.setProperty('--step-progress', local.toFixed(3));
+      if (stepRect.top <= viewportLine) {
+        activeIndex = step.dataset.storyIndex || activeIndex;
+        activeLabel = step.dataset.storyLabel || activeLabel;
+      }
+      step.querySelectorAll('.about-timeline li, .about-projects article').forEach(function (item, index) {
+        var itemRect = item.getBoundingClientRect();
+        var visible = Math.min(1, Math.max(0, (window.innerHeight * .88 - itemRect.top) / Math.max(80, itemRect.height)));
+        item.style.setProperty('--item-visible', visible.toFixed(3));
+      });
+    });
+    if (marker) marker.textContent = activeIndex;
+    var stageMeta = story.querySelector('.about-stage-meta b');
+    if (stageMeta) stageMeta.textContent = activeIndex + ' / ' + activeLabel;
+    var signal = story.querySelector('.about-signal');
+    if (signal) signal.style.setProperty('--signal-rotate', (progress * 160).toFixed(1) + 'deg');
+  }
+
+  function enhanceAboutStory() {
+    if (!document.querySelector('.about-story')) return;
+    if (window.__thornAboutStoryBound !== true) {
+      window.__thornAboutStoryBound = true;
+      window.addEventListener('scroll', function () {
+        if (window.__thornAboutStoryFrame) return;
+        window.__thornAboutStoryFrame = requestAnimationFrame(function () {
+          window.__thornAboutStoryFrame = 0;
+          updateAboutStory();
+        });
+      }, { passive: true });
+      window.addEventListener('resize', updateAboutStory, { passive: true });
+    }
+    updateAboutStory();
+  }
+
   function updateReadingProgress() {
     progressFrame = 0;
     var bar = document.querySelector('.thorn-reading-progress');
@@ -323,6 +373,7 @@
     enhanceSearchAccessibility();
     enhanceContentAccessibility();
     enhanceAboutNavigation();
+    enhanceAboutStory();
     ensureReadingProgress();
     ensureSkipLink();
     enhanceHomeSemantics();

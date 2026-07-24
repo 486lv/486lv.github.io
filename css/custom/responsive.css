@@ -18,6 +18,10 @@
   .about-intro { max-width: 100%; overflow-wrap: anywhere; }
   .about-top-nav { justify-content: flex-start; overflow-x: auto; }
   .about-hero { min-height: auto; padding-bottom: 64px; }
+  .about-hero { grid-template-columns: minmax(0, 1fr) 180px; gap: 28px; }
+  .about-story-stage { width: 180px; }
+  .about-story .about-section { width: 100%; padding-left: 28px !important; }
+  .about-story-progress { right: 10px; }
   .about-facts { grid-template-columns: 1fr; }
   .about-facts > div { min-height: auto; padding: 34px 0 !important; border-left: 0 !important; border-top: 1px solid var(--mono-border); }
   .about-section { padding: 72px 0 !important; }
@@ -54,13 +58,37 @@
   .minimal-hero-eyebrow { max-width: 100%; font-size: .7rem !important; letter-spacing: .1em; white-space: normal; }
   .minimal-hero-actions { margin-top: 24px; }
   .minimal-hero-actions a { min-height: 42px; padding: 0 16px; }
+  .home-playground { margin: 54px 0 72px; }
+  .home-playground > header { display: block; }
+  .home-playground header p { margin-top: 22px !important; }
+  .reaction-lab { display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch; min-height: 360px; padding: 26px; border-radius: 20px; }
+  .reaction-score { position: absolute; top: 24px; right: 24px; }
+  .home-playground > footer { display: block; line-height: 1.8; }
+  .home-playground > footer span { display: block; }
+  .game-module-head { display: block; }
+  .game-module-head p { margin-top: 16px !important; }
+  .memory-lab { grid-template-columns: 1fr; }
+  .memory-board { min-height: 360px; padding: 18px; }
+  .memory-board button { min-height: 140px; }
+  .game-console { min-height: 220px; border-top: 1px solid rgba(255,255,255,.12); border-left: 0; }
+  .game-console > b { margin-bottom: 30px; }
+  .aim-lab { min-height: 440px; }
+  .arcade-hub { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arcade-card:nth-child(n) { grid-column: auto; }
+  .classic-shell { grid-template-columns: 1fr; }
+  .classic-console { min-height: 230px; border-top: 1px solid rgba(255,255,255,.12); border-left: 0; }
   #recent-posts .article-title { font-size: 1.55rem !important; }
   #recent-posts .content { -webkit-line-clamp: 2 !important; }
   #article-container p, #article-container li { font-size: 1rem; line-height: 1.78; }
   #article-container h2 { font-size: 1.55rem; }
   .about-name { font-size: clamp(4rem, 23vw, 6rem) !important; }
+  .about-hero { display: block; }
+  .about-story-stage { width: 150px; margin: 48px 0 0 auto; }
   .about-name span { display: block; white-space: nowrap; }
   .about-intro { margin-top: 40px !important; font-size: 1.05rem !important; }
+  .about-story-stage .about-signal { width: 100%; }
+  .arcade-hub { grid-template-columns: 1fr; }
+  .arcade-card { min-height: 290px; }
   .about-projects article { display: block; padding: 26px 0; }
   .about-projects article:hover { padding: 26px 0; }
   .about-projects h3 { margin: 16px 0 10px !important; }
