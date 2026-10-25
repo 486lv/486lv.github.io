@@ -132,9 +132,12 @@
         }
       });
       trigger.parentElement.addEventListener('focusout', function (event) {
-        // Safari can report no focus target while pressing a menu link. Keep the
-        // hovered menu available until the click has been dispatched.
-        if (!trigger.parentElement.contains(event.relatedTarget) && !trigger.parentElement.matches(':hover')) setOpen(false);
+        // WebKit may report relatedTarget=null while moving focus to a child.
+        // Wait for the focus transfer before deciding whether the menu was left.
+        window.requestAnimationFrame(function () {
+          var group = trigger.parentElement;
+          if (group && group.isConnected && !group.contains(document.activeElement) && !group.matches(':hover')) setOpen(false);
+        });
       });
       if (trigger.closest('#sidebar-menus')) {
         trigger.setAttribute('aria-expanded', String(!trigger.classList.contains('hide')));
