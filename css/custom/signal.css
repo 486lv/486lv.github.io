@@ -1,0 +1,80 @@
+/* A static index first; motion is a progressive enhancement. */
+#body-wrap.page #page-header.full_page {
+  height: auto !important; min-height: 520px !important; padding: 96px 0 40px;
+  background: var(--mono-bg) !important; border-bottom: 1px solid var(--mono-border);
+}
+#page-header.full_page::before, #page-header.full_page::after { display: none !important; }
+#page-header.full_page #site-info.signal-field {
+  position: relative; top: auto; left: auto; bottom: auto; transform: none;
+  display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 32px;
+  width: min(1120px, calc(100% - 80px)); margin: 0 auto; padding: 0; text-align: left;
+}
+#page-header.full_page #site-info.signal-field::before,
+#page-header.full_page #site-info.signal-field::after { display: none; }
+.signal-eyebrow { color: var(--mono-text-secondary); font-size: 12px; letter-spacing: .14em; margin: 0 0 24px; }
+#page-header.full_page .signal-copy #site-title { font-size: clamp(3.6rem, 6.6vw, 6rem) !important; color: var(--mono-text) !important; }
+.signal-intro { margin: 26px 0 20px; color: var(--mono-text-secondary); font-size: 17px; line-height: 1.7; }
+.signal-read { display: inline-flex; align-items: center; justify-content: space-between; gap: 36px; min-height: 44px; color: var(--mono-text) !important; border-bottom: 1px solid var(--mono-text); font-size: 14px; }
+.signal-read:hover { gap: 46px; }
+.signal-index { position: relative; min-height: 350px; color: var(--mono-text); }
+.signal-rings { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--mono-border); stroke-width: .8; animation: signal-arrive .6s ease-out both; }
+.signal-center { position: absolute; top: 46%; left: 38%; font: 21px var(--mono-display-font); line-height: 1.7; color: var(--mono-text-secondary); }
+.signal-center small { font: 10px var(--mono-font); letter-spacing: .12em; }
+.signal-node { position: absolute; display: flex; align-items: flex-start; gap: 12px; min-height: 56px; padding: 8px 12px; color: var(--mono-text) !important; background: var(--mono-bg); border-radius: 4px; }
+.signal-node i { display: block; width: 10px; height: 22px; margin-top: 4px; background: var(--mono-text); clip-path: polygon(50% 0, 62% 44%, 100% 55%, 62% 64%, 50% 100%, 38% 64%, 0 55%, 38% 44%); transition: background .18s, transform .18s; }
+.signal-node small, .signal-node strong, .signal-node em { display: block; }
+.signal-node small { font-size: 12px; letter-spacing: .06em; color: var(--mono-text-secondary); }
+.signal-node strong { font-size: 16px; font-weight: 550; line-height: 1.8; }
+.signal-node em { font-size: 12px; font-style: normal; color: var(--mono-text-secondary); max-width: 215px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.signal-writing { top: 0; left: 16%; }
+.signal-travel { top: 40%; right: 0; }
+.signal-play { bottom: 0; left: 8%; }
+.signal-node:hover i, .signal-node:focus-visible i { background: #809c12; transform: scale(1.25); }
+[data-theme="dark"] .signal-node:hover i, [data-theme="dark"] .signal-node:focus-visible i { background: #d8ff3e; }
+.signal-node:hover strong, .signal-node:focus-visible strong { text-decoration: underline; text-underline-offset: 4px; }
+.signal-node:focus-visible { outline: 2px solid var(--mono-text); outline-offset: 4px; }
+@keyframes signal-arrive { from { opacity: .4; transform: scale(.95); } to { opacity: 1; transform: scale(1); } }
+#body-wrap.page #recent-posts::before { content: "最近写下 / LATEST WRITING"; letter-spacing: .08em; font-size: 12px; }
+#body-wrap.page:has(.signal-field) .layout#content-inner { margin-top: 24px !important; }
+.reading-next { margin: 36px 0; padding: 24px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px; border-block: 1px solid var(--mono-border); }
+.reading-next > span { grid-column: 1 / -1; font-size: 12px; color: var(--mono-text-secondary); }
+.reading-next a { display: grid; gap: 8px; min-height: 60px; color: var(--mono-text); }
+.reading-next small { color: var(--mono-text-secondary); }
+.reading-next strong { font-size: 16px; font-weight: 500; }
+.reading-next a:hover strong { text-decoration: underline; }
+.fp-accessible-list { padding: 16px 24px; border-top: 1px solid var(--mono-border); }
+.fp-accessible-list summary { cursor: pointer; min-height: 44px; display: list-item; align-content: center; }
+.fp-accessible-list ul { padding-left: 20px; }
+.fp-map-cn, .fp-map-world { touch-action: pan-y; }
+.search-scope { display: flex; gap: 12px; align-items: center; margin: 8px 0; color: var(--mono-text-secondary); font-size: 13px; }
+.search-scope button { min-height: 40px; padding: 4px 12px; color: var(--mono-text); border: 1px solid var(--mono-border); border-radius: 8px; background: var(--mono-bg); cursor: pointer; }
+@media (max-width: 768px) {
+  #body-wrap.page #page-header.full_page { min-height: 450px !important; padding: 88px 0 24px; }
+  #page-header.full_page #site-info.signal-field { display: block; width: calc(100% - 40px); }
+  .signal-eyebrow { margin-bottom: 14px; font-size: 12px; }
+  #page-header.full_page .signal-copy #site-title { font-size: clamp(2.8rem, 11vw, 4rem) !important; }
+  .signal-intro { margin: 16px 0 6px; font-size: 15px; line-height: 1.6; }
+  .signal-intro br { display: none; }
+  .signal-read { font-size: 13px; min-height: 40px; }
+  .signal-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 0; margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--mono-border); gap: 10px; }
+  .signal-rings, .signal-center { display: none; }
+  .signal-node { position: static; display: block; padding: 0 0 8px; min-height: 84px; }
+  .signal-node i { height: 16px; width: 8px; margin: 0 0 6px; }
+  .signal-node small { font-size: 12px; }
+  .signal-node strong { font-size: 13px; line-height: 1.6; }
+  .signal-node em { display: none; }
+  .reading-next { grid-template-columns: 1fr; }
+  .search-scope { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) { .signal-rings { animation: none; } }
+[data-motion="reduced"] .signal-rings { animation: none; }
+
+#page-header.full_page .signal-copy #site-title { text-align: left; }
+#sidebar #sidebar-menus { right: 0 !important; transform: translateX(100%); visibility: hidden; }
+#sidebar #sidebar-menus.open { transform: translateX(0); visibility: visible; }
+
+#page-header #nav { left: 0; right: 0; }
+@media (max-width: 768px) {
+  #post-meta .post-meta-date .fa-history,
+  #post-meta .post-meta-wordcount .fa-clock { margin-left: 10px; }
+}

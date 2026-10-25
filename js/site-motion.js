@@ -8,9 +8,6 @@
   var progressFrame = 0;
   var sectionObserver = null;
   var transitionRecoveryTimer = 0;
-  var heroPointerFrame = 0;
-  var heroPointerX = '50%';
-  var heroPointerY = '45%';
 
   function revealSections() {
     if (sectionObserver) {
@@ -50,23 +47,6 @@
       element.style.transitionDelay = Math.min(index % 4, 3) * 55 + 'ms';
       sectionObserver.observe(element);
     });
-  }
-
-  function trackHeroPointer() {
-    var hero = document.querySelector('#page-header.full_page');
-    if (!hero || hero.dataset.pointerMotion === 'true' || reduceMotion.matches || !window.matchMedia('(pointer: fine)').matches) return;
-    hero.dataset.pointerMotion = 'true';
-    hero.addEventListener('pointermove', function (event) {
-      var rect = hero.getBoundingClientRect();
-      heroPointerX = ((event.clientX - rect.left) / rect.width * 100).toFixed(2) + '%';
-      heroPointerY = ((event.clientY - rect.top) / rect.height * 100).toFixed(2) + '%';
-      if (heroPointerFrame) return;
-      heroPointerFrame = requestAnimationFrame(function () {
-        heroPointerFrame = 0;
-        hero.style.setProperty('--hero-x', heroPointerX);
-        hero.style.setProperty('--hero-y', heroPointerY);
-      });
-    }, { passive: true });
   }
 
   function enhanceControls() {
@@ -132,15 +112,19 @@
 
       function setOpen(open) {
         trigger.parentElement.classList.toggle('keyboard-open', open);
+        trigger.parentElement.classList.toggle('keyboard-closed', !open);
         trigger.setAttribute('aria-expanded', String(open));
+        if (trigger.closest('#sidebar-menus')) trigger.classList.toggle('hide', !open);
       }
-      trigger.addEventListener('keydown', function (event) {
+      trigger.parentElement.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
+          event.preventDefault();
+          event.stopPropagation();
           setOpen(false);
           trigger.focus();
           return;
         }
-        if (event.key === 'Enter' || event.key === ' ' || event.key === 'ArrowDown') {
+        if (event.target === trigger && (event.key === 'Enter' || event.key === ' ' || event.key === 'ArrowDown')) {
           event.preventDefault();
           setOpen(true);
           var first = menu.querySelector('a');
@@ -150,9 +134,13 @@
       trigger.parentElement.addEventListener('focusout', function (event) {
         if (!trigger.parentElement.contains(event.relatedTarget)) setOpen(false);
       });
-      trigger.parentElement.addEventListener('mouseenter', function () { trigger.setAttribute('aria-expanded', 'true'); });
-      trigger.parentElement.addEventListener('mouseleave', function () {
-        if (!trigger.parentElement.classList.contains('keyboard-open')) trigger.setAttribute('aria-expanded', 'false');
+      if (trigger.closest('#sidebar-menus')) {
+        trigger.setAttribute('aria-expanded', String(!trigger.classList.contains('hide')));
+        // Theme's delegated click toggles .hide; observe the resulting state.
+        new MutationObserver(function () { trigger.setAttribute('aria-expanded', String(!trigger.classList.contains('hide'))); }).observe(trigger, { attributes: true, attributeFilter: ['class'] });
+      } else trigger.parentElement.addEventListener('mouseenter', function () { setOpen(true); });
+      if (!trigger.closest('#sidebar-menus')) trigger.parentElement.addEventListener('mouseleave', function () {
+        if (!trigger.parentElement.contains(document.activeElement)) setOpen(false);
       });
     });
 
@@ -182,8 +170,6 @@
     if (input) input.setAttribute('aria-label', '搜索文章');
     if (close) close.setAttribute('aria-label', '关闭搜索');
     var trigger = document.querySelector('#search-button .site-page');
-    if (trigger && input) trigger.addEventListener('click', function () { setTimeout(function () { input.focus(); }, 80); });
-    if (close && trigger) close.addEventListener('click', function () { setTimeout(function () { trigger.focus(); }, 0); });
     dialog.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && close) {
         event.preventDefault();
@@ -364,9 +350,37 @@
     });
   }
 
+  function closeNavigationDrawer() {
+    var drawer = document.getElementById('sidebar-menus');
+    var mask = document.getElementById('menu-mask');
+    if (drawer && drawer.classList.contains('open') && mask) mask.click();
+  }
+
+  document.addEventListener('pjax:send', closeNavigationDrawer);
+  document.addEventListener('click', function (event) {
+    if (event.target.closest('#sidebar-menus a[href]')) closeNavigationDrawer();
+  }, true);
+
+  document.addEventListener('keydown', function (event) {
+    var drawer = document.getElementById('sidebar-menus');
+    if (event.key === 'Escape' && drawer && drawer.classList.contains('open')) {
+      closeNavigationDrawer();
+      var toggle = document.querySelector('#toggle-menu .site-page');
+      if (toggle) toggle.focus();
+    }
+  });
+
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('.random-reading');
+    if (!link) return;
+    try {
+      var choices = JSON.parse(link.dataset.choices);
+      if (choices.length) link.href = choices[Math.floor(Math.random() * choices.length)];
+    } catch (error) {}
+  }, true);
+
   function initMotion() {
     revealSections();
-    trackHeroPointer();
     enhanceControls();
     markCurrentNavigation();
     enhanceNavigationAccessibility();

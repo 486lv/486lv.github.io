@@ -215,3 +215,5 @@
   border-radius: 12px;
 }
 #sidebar #sidebar-menus .menus_item_child .site-page { min-height: 40px; color: var(--mono-text-secondary) !important; font-size: .86rem; }
+
+#nav .menus_item.keyboard-closed > .menus_item_child { opacity: 0; visibility: hidden; pointer-events: none; }

@@ -1,5 +1,6 @@
 (function () {
   var chart;
+  var generation = 0;
   var cachedGeoJSON;
   var cachedPoints;
 
@@ -55,7 +56,7 @@
 
   function renderAccessibleList(element, points) {
     var card = element.closest('.fp-card');
-    if (!card) return;
+    if (!card || card.querySelector('[data-static]')) return;
     var old = card.querySelector('.fp-accessible-list');
     if (old) old.remove();
     var summary = document.createElement('div');
@@ -183,6 +184,7 @@
   function initChinaMap() {
     var element = document.getElementById('my-echarts');
     if (!element || typeof echarts === 'undefined' || element.dataset.loading === 'true') return;
+    var run = ++generation;
     element.dataset.loading = 'true';
     element.classList.add('is-loading');
     element.classList.remove('fp-map-error');
@@ -205,8 +207,10 @@
         return response.json();
       })
     ]).then(function (result) {
+      if (run !== generation || !element.isConnected) return;
       renderMap(result[0], Array.isArray(result[1]) ? result[1] : []);
     }).catch(function (error) {
+      if (run !== generation || !element.isConnected) return;
       element.classList.add('fp-map-error');
       element.innerHTML = '<div><p>地图暂时无法加载。</p><button type="button">重新加载</button></div>';
       var retry = element.querySelector('button');
@@ -222,20 +226,11 @@
     });
   }
 
-  function resizeChart() {
-    if (chart) chart.resize();
-  }
-
-  window.addEventListener('resize', resizeChart, { passive: true });
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(resizeChart).observe(document.getElementById('my-echarts') || document.body);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initChinaMap);
-  else initChinaMap();
-  document.addEventListener('pjax:complete', initChinaMap);
-  new MutationObserver(function (mutations) {
-    if (cachedGeoJSON && cachedPoints && mutations.some(function (item) { return item.attributeName === 'data-theme'; })) {
-      renderMap(cachedGeoJSON, cachedPoints);
-    }
-  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  window.ThornMaps = window.ThornMaps || {};
+  window.ThornMaps.china = {
+    init: initChinaMap,
+    resize: function () { if (chart) chart.resize(); },
+    theme: function () { if (chart && cachedGeoJSON) renderMap(cachedGeoJSON, cachedPoints); },
+    destroy: function () { generation += 1; if (chart) chart.dispose(); chart = null; }
+  };
 })();

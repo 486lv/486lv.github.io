@@ -249,7 +249,7 @@ body.home-reveal-enabled #recent-posts .recent-post-item:not(.reveal-is-visible)
 .arcade-card::before { position: absolute; right: -60px; bottom: -90px; z-index: -1; width: 220px; aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--mono-text) 12%, transparent); border-radius: 50%; content: ""; transition: transform 600ms var(--mono-ease-out); }
 .arcade-card:hover, .arcade-card:focus-visible { color: var(--mono-inverse); background: var(--mono-text); outline: none; transform: translateY(-6px); }
 .arcade-card:hover :is(p, small, .arcade-number, .arcade-record span),
-.arcade-card:focus-visible :is(p, small, .arcade-number, .arcade-record span) { color: rgba(255,255,255,.66) !important; }
+.arcade-card:focus-visible :is(p, small, .arcade-number, .arcade-record span) { color: var(--mono-inverse) !important; opacity: .78; }
 .arcade-card:hover::before { border-color: rgba(255,255,255,.2); transform: scale(1.3); }
 .arcade-number, .arcade-card small, .arcade-record span { color: var(--mono-text-secondary); font-size: .62rem; letter-spacing: .13em; }
 .arcade-card h2 { margin: 7px 0 6px !important; color: currentColor !important; font-family: var(--mono-display-font) !important; font-size: clamp(1.8rem, 4vw, 3rem) !important; font-weight: 540 !important; letter-spacing: -.045em; }

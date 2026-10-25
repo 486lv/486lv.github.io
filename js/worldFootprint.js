@@ -1,5 +1,6 @@
 (function () {
   var chart = null;
+  var generation = 0;
   var cachedWorld = null;
   var cachedPlaces = null;
 
@@ -37,7 +38,7 @@
 
   function renderAccessibleList(element, places) {
     var card = element.closest('.fp-card');
-    if (!card) return;
+    if (!card || card.querySelector('[data-static]')) return;
     var previous = card.querySelector('.fp-accessible-list');
     if (previous) previous.remove();
     var summary = document.createElement('div');
@@ -144,6 +145,7 @@
   function initWorldMap() {
     var element = document.getElementById('map');
     if (!element || typeof echarts === 'undefined' || element.dataset.loading === 'true') return;
+    var run = ++generation;
     element.dataset.loading = 'true';
     element.classList.add('is-loading');
 
@@ -161,8 +163,10 @@
         return response.json();
       })
     ]).then(function (result) {
+      if (run !== generation || !element.isConnected) return;
       renderMap(result[0], normalizePlaces(result[1]));
     }).catch(function (error) {
+      if (run !== generation || !element.isConnected) return;
       element.classList.add('fp-map-error');
       element.innerHTML = '<div><p>地图暂时无法加载。</p><button type="button">重新加载</button></div>';
       var retry = element.querySelector('button');
@@ -178,14 +182,11 @@
     });
   }
 
-  function resizeChart() { if (chart) chart.resize(); }
-  window.addEventListener('resize', resizeChart, { passive: true });
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initWorldMap);
-  else initWorldMap();
-  document.addEventListener('pjax:complete', initWorldMap);
-  new MutationObserver(function (mutations) {
-    if (cachedWorld && cachedPlaces && mutations.some(function (item) { return item.attributeName === 'data-theme'; })) {
-      renderMap(cachedWorld, cachedPlaces);
-    }
-  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  window.ThornMaps = window.ThornMaps || {};
+  window.ThornMaps.world = {
+    init: initWorldMap,
+    resize: function () { if (chart) chart.resize(); },
+    theme: function () { if (chart && cachedWorld) renderMap(cachedWorld, cachedPlaces); },
+    destroy: function () { generation += 1; if (chart) chart.dispose(); chart = null; }
+  };
 })();

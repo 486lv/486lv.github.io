@@ -130,3 +130,12 @@
   #page-header.full_page #site-info::before { width: min(430px, 60vw); }
   #page-header.full_page #site-info::after { width: min(300px, 42vw); }
 }
+
+@media (max-width: 768px) {
+  #body-wrap.post #page-header { height: auto !important; min-height: 240px; padding: calc(var(--mono-nav-height) + 32px) 20px 30px; }
+  #page-header #post-info { position: static !important; width: 100%; padding: 0; transform: none; }
+  #page-header #post-info .post-title { font-size: clamp(1.85rem, 6vw, 2.6rem) !important; line-height: 1.25; overflow-wrap: anywhere; }
+  #page-header #post-info #post-meta .post-meta-separator { display: none !important; }
+  #page-header #post-info #post-meta .meta-firstline,
+  #page-header #post-info #post-meta .meta-secondline { gap: 4px 8px; }
+}

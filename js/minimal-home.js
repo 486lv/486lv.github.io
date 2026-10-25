@@ -1,49 +1,5 @@
 (function () {
-  function enhanceHomeHero() {
-    var header = document.querySelector('#page-header.full_page');
-    var siteInfo = header && header.querySelector('#site-info');
-    if (!siteInfo) return;
-    header.classList.add('minimal-enhanced');
-    siteInfo.querySelectorAll('.minimal-hero-showcase').forEach(function (element) { element.remove(); });
-    if (siteInfo.querySelector('.minimal-hero-actions')) return;
-
-    var settings = window.__THORN_APPEARANCE__ || {};
-    var title = siteInfo.querySelector('#site-title');
-    var subtitle = siteInfo.querySelector('#subtitle');
-    if (!subtitle) {
-      var subtitleWrap = document.createElement('div');
-      subtitleWrap.id = 'site-subtitle';
-      subtitle = document.createElement('span');
-      subtitle.id = 'subtitle';
-      subtitleWrap.appendChild(subtitle);
-      if (title && title.nextSibling) siteInfo.insertBefore(subtitleWrap, title.nextSibling);
-      else siteInfo.appendChild(subtitleWrap);
-    }
-    if (title && settings.heroTitle) title.textContent = settings.heroTitle;
-    if (subtitle && settings.heroSubtitle) subtitle.textContent = settings.heroSubtitle;
-
-    var eyebrow = document.createElement('p');
-    eyebrow.className = 'minimal-hero-eyebrow';
-    eyebrow.textContent = settings.heroEyebrow || 'THORN · NOTES & FIELDWORK';
-    siteInfo.insertBefore(eyebrow, title || siteInfo.firstChild);
-
-    var actions = document.createElement('div');
-    actions.className = 'minimal-hero-actions';
-    var primary = document.createElement('a');
-    primary.href = settings.primaryActionHref || '#content-inner';
-    primary.textContent = settings.primaryActionLabel || '阅读文章';
-    var secondary = document.createElement('a');
-    secondary.href = settings.secondaryActionHref || '/about/';
-    secondary.textContent = settings.secondaryActionLabel || '关于我';
-    if (settings.showPrimaryAction !== false) actions.appendChild(primary);
-    if (settings.showSecondaryAction !== false) actions.appendChild(secondary);
-    siteInfo.appendChild(actions);
-
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () { header.classList.add('hero-is-ready'); });
-    });
-
-  }
+  var destroyPlayground = function () {};
 
   function revealContent() {
     var items = document.querySelectorAll('#recent-posts .recent-post-item:not(.reveal-observed)');
@@ -70,7 +26,50 @@
   function buildPlayground() {
     var section = document.querySelector('.playground-page');
     if (!section || section.dataset.gameReady === 'true') return;
+    destroyPlayground();
     section.dataset.gameReady = 'true';
+    var disposed = false;
+    var activeGame = '';
+    var memoryRun = 0;
+    var pending = new Map();
+    var listeners = new AbortController();
+    function later(callback, ms, cancel) {
+      var id = window.setTimeout(function () {
+        pending.delete(id);
+        if (!disposed && section.isConnected) callback();
+      }, ms);
+      pending.set(id, cancel);
+      return id;
+    }
+    function cancelPending() {
+      pending.forEach(function (cancel, id) { window.clearTimeout(id); if (cancel) cancel(false); });
+      pending.clear();
+    }
+    function gameActive(name) {
+      return !disposed && section.isConnected && activeGame === name && !gameView.hidden;
+    }
+    function stopGames() {
+      memoryRun += 1;
+      accepting = false;
+      cancelPending();
+      window.clearInterval(snakeTimer); snakeTimer = 0;
+      window.clearInterval(tetrisTimer); tetrisTimer = 0;
+      window.cancelAnimationFrame(aimFrame); aimFrame = 0;
+      if (aim) aim.dataset.running = 'false';
+      if (lab) setState('idle', '点击开始', '等待信号变亮后，尽快点击');
+      if (cells) cells.forEach(function (cell) { cell.classList.remove('is-lit', 'is-pressed'); });
+      if (memory) memory.classList.remove('has-error');
+      if (memoryMessage) memoryMessage.textContent = '准备好后开始';
+      if (snakeStart) snakeStart.textContent = '开始游戏';
+      if (tetrisStart) tetrisStart.textContent = '开始游戏';
+    }
+    destroyPlayground = function () {
+      stopGames();
+      disposed = true;
+      activeGame = '';
+      listeners.abort();
+      delete section.dataset.gameReady;
+    };
     function readRecord(key) {
       try { return Number(window.localStorage.getItem(key)) || 0; } catch (error) { return 0; }
     }
@@ -81,34 +80,36 @@
       var node = section.querySelector('[data-record="' + name + '"]');
       if (node) node.textContent = value;
     }
+    function listen(target, event, handler) { target.addEventListener(event, handler, { signal: listeners.signal }); }
     var hub = section.querySelector('.arcade-hub');
     var gameView = section.querySelector('.arcade-game-view');
     var gameModules = Array.from(section.querySelectorAll('[data-game]'));
     function openGame(name) {
+      stopGames();
+      activeGame = name;
       hub.hidden = true;
       gameView.hidden = false;
       gameModules.forEach(function (module) { module.hidden = module.dataset.game !== name; });
       window.location.hash = 'game-' + name;
       gameView.scrollIntoView({ block: 'start' });
+      section.querySelector('.arcade-back').focus({ preventScroll: true });
     }
     function closeGame() {
-      window.clearInterval(snakeTimer);
-      snakeTimer = 0;
-      window.clearInterval(tetrisTimer);
-      tetrisTimer = 0;
-      if (aimFrame) window.cancelAnimationFrame(aimFrame);
-      var aimPanel = section.querySelector('.aim-lab');
-      if (aimPanel) aimPanel.dataset.running = 'false';
+      var previous = activeGame;
+      stopGames();
+      activeGame = '';
       gameModules.forEach(function (module) { module.hidden = true; });
       gameView.hidden = true;
       hub.hidden = false;
       if (window.location.hash.indexOf('#game-') === 0) history.replaceState(null, '', window.location.pathname);
       hub.scrollIntoView({ block: 'start' });
+      var trigger = section.querySelector('[data-open-game="' + previous + '"]');
+      if (trigger) trigger.focus({ preventScroll: true });
     }
     section.querySelectorAll('[data-open-game]').forEach(function (button) {
-      button.addEventListener('click', function () { openGame(button.dataset.openGame); });
+      listen(button, 'click', function () { openGame(button.dataset.openGame); });
     });
-    section.querySelector('.arcade-back').addEventListener('click', closeGame);
+    listen(section.querySelector('.arcade-back'), 'click', closeGame);
     ['reaction', 'memory', 'aim', 'snake', 'tetris', 'gomoku'].forEach(function (name) {
       var key = name === 'reaction' ? 'thorn-reaction-best' : name === 'aim' ? 'thorn-aim-best' : 'thorn-' + name + '-best';
       var value = readRecord(key);
@@ -137,6 +138,7 @@
       lab.setAttribute('aria-label', headline + '。' + note);
     }
     function act() {
+      if (!gameActive('reaction')) return;
       var state = lab.dataset.state;
       if (state === 'waiting') {
         window.clearTimeout(timer);
@@ -152,14 +154,14 @@
         setState('result', score + ' ms', score < 220 ? '很快。再来一次？' : '还可以更快，点击重试');
       } else {
         setState('waiting', '等它变亮', '现在点击会被判定为抢跑');
-        timer = window.setTimeout(function () {
+        timer = later(function () {
           started = performance.now();
           setState('go', '现在！', '点击目标');
         }, 1100 + Math.random() * 2200);
       }
     }
-    lab.addEventListener('click', act);
-    lab.addEventListener('keydown', function (event) {
+    listen(lab, 'click', act);
+    listen(lab, 'keydown', function (event) {
       if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); act(); }
     });
 
@@ -172,16 +174,16 @@
     var inputIndex = 0;
     var accepting = false;
     var memoryBest = readRecord('thorn-memory-best');
-    function delay(ms) { return new Promise(function (resolve) { window.setTimeout(resolve, ms); }); }
-    async function showSequence() {
+    function delay(ms) { return new Promise(function (resolve) { later(function () { resolve(true); }, ms, resolve); }); }
+    async function showSequence(run) {
       accepting = false;
       memoryMessage.textContent = '注意看';
-      await delay(450);
+      if (!await delay(450) || run !== memoryRun || !gameActive('memory')) return;
       for (var i = 0; i < sequence.length; i += 1) {
         cells[sequence[i]].classList.add('is-lit');
-        await delay(Math.max(220, 480 - sequence.length * 18));
+        if (!await delay(Math.max(220, 480 - sequence.length * 18)) || run !== memoryRun || !gameActive('memory')) return;
         cells[sequence[i]].classList.remove('is-lit');
-        await delay(130);
+        if (!await delay(130) || run !== memoryRun || !gameActive('memory')) return;
       }
       inputIndex = 0;
       accepting = true;
@@ -190,35 +192,40 @@
     function nextMemoryLevel() {
       sequence.push(Math.floor(Math.random() * cells.length));
       memoryLevel.textContent = String(sequence.length).padStart(2, '0');
-      if (sequence.length > memoryBest) {
-        memoryBest = sequence.length;
-        writeRecord('thorn-memory-best', memoryBest);
-        updateHubRecord('memory', String(memoryBest).padStart(2, '0'));
-      }
-      showSequence();
+      showSequence(memoryRun);
     }
-    memoryStart.addEventListener('click', function () {
+    listen(memoryStart, 'click', function () {
+      memoryRun += 1;
+      cancelPending();
+      cells.forEach(function (cell) { cell.classList.remove('is-lit', 'is-pressed'); });
+      memory.classList.remove('has-error');
       sequence = [];
       memoryStart.textContent = '重新开始';
       nextMemoryLevel();
     });
     cells.forEach(function (cell, cellIndex) {
-      cell.addEventListener('click', async function () {
+      listen(cell, 'click', async function () {
         if (!accepting) return;
         cell.classList.add('is-pressed');
-        window.setTimeout(function () { cell.classList.remove('is-pressed'); }, 160);
+        later(function () { cell.classList.remove('is-pressed'); }, 160);
         if (cellIndex !== sequence[inputIndex]) {
           accepting = false;
           memory.classList.add('has-error');
           memoryMessage.textContent = '序列中断 · 到达 LEVEL ' + String(sequence.length).padStart(2, '0');
-          window.setTimeout(function () { memory.classList.remove('has-error'); }, 500);
+          later(function () { memory.classList.remove('has-error'); }, 500);
           return;
         }
         inputIndex += 1;
         if (inputIndex === sequence.length) {
           accepting = false;
           memoryMessage.textContent = '正确';
-          await delay(520);
+          if (sequence.length > memoryBest) {
+            memoryBest = sequence.length;
+            writeRecord('thorn-memory-best', memoryBest);
+            updateHubRecord('memory', String(memoryBest).padStart(2, '0'));
+          }
+          var completedRun = memoryRun;
+          if (!await delay(520) || completedRun !== memoryRun || !gameActive('memory')) return;
           nextMemoryLevel();
         }
       });
@@ -257,13 +264,13 @@
       }
     }
     function tickAim(now) {
-      if (!document.body.contains(aim) || aim.dataset.running !== 'true') return;
+      if (!gameActive('aim') || aim.dataset.running !== 'true') return;
       var left = Math.max(0, aimEnd - now);
       aimTime.textContent = (left / 1000).toFixed(1);
       if (left <= 0) { finishAim(); return; }
       aimFrame = window.requestAnimationFrame(tickAim);
     }
-    aimStart.addEventListener('click', function () {
+    listen(aimStart, 'click', function () {
       hits = 0;
       aimHits.textContent = '0';
       aimTime.textContent = '15.0';
@@ -272,7 +279,7 @@
       moveTarget();
       aimFrame = window.requestAnimationFrame(tickAim);
     });
-    aimTarget.addEventListener('click', function () {
+    listen(aimTarget, 'click', function () {
       if (aim.dataset.running !== 'true') return;
       hits += 1;
       aimHits.textContent = String(hits);
@@ -320,6 +327,7 @@
       snakeStart.textContent = '重新开始';
     }
     function stepSnake() {
+      if (!gameActive('snake')) { stopSnake(); return; }
       snakeDirection = snakeNextDirection;
       var head = { x: snake[0].x + snakeDirection.x, y: snake[0].y + snakeDirection.y };
       if (head.x < 0 || head.x >= 20 || head.y < 0 || head.y >= 20 || snake.some(function (part) { return part.x === head.x && part.y === head.y; })) {
@@ -357,12 +365,12 @@
       var next = directions[name];
       if (next && !(next.x === -snakeDirection.x && next.y === -snakeDirection.y)) snakeNextDirection = next;
     }
-    snakeStart.addEventListener('click', startSnake);
+    listen(snakeStart, 'click', startSnake);
     section.querySelectorAll('.direction-pad button').forEach(function (button) {
-      button.addEventListener('click', function () { setSnakeDirection(button.dataset.dir); });
+      listen(button, 'click', function () { setSnakeDirection(button.dataset.dir); });
     });
-    document.addEventListener('keydown', function (event) {
-      if (section.querySelector('[data-game="snake"]').hidden) return;
+    listen(document, 'keydown', function (event) {
+      if (!gameActive('snake') || !snakeTimer || !section.contains(event.target) || event.target.closest('input, textarea, [contenteditable], [role=dialog]')) return;
       var keyDirections = { ArrowUp: 'up', w: 'up', W: 'up', ArrowDown: 'down', s: 'down', S: 'down', ArrowLeft: 'left', a: 'left', A: 'left', ArrowRight: 'right', d: 'right', D: 'right' };
       if (keyDirections[event.key]) { event.preventDefault(); setSnakeDirection(keyDirections[event.key]); }
     });
@@ -433,6 +441,7 @@
       drawTetris();
     }
     function tetrisTick() {
+      if (!gameActive('tetris')) { window.clearInterval(tetrisTimer); tetrisTimer = 0; return; }
       if (!tetrisCollides(0, 1, tetrisPiece.shape)) tetrisPiece.y += 1;
       else lockTetris();
       drawTetris();
@@ -440,10 +449,10 @@
     function startTetris() {
       window.clearInterval(tetrisTimer); resetTetrisBoard(); tetrisLines = 0; tetrisLinesNode.textContent = '0'; newTetrisPiece(); drawTetris(); tetrisStart.textContent = '游戏中'; tetrisTimer = window.setInterval(tetrisTick, 520);
     }
-    tetrisStart.addEventListener('click', startTetris);
-    section.querySelectorAll('.tetris-controls button').forEach(function (button) { button.addEventListener('click', function () { moveTetris(button.dataset.action); }); });
-    document.addEventListener('keydown', function (event) {
-      if (section.querySelector('[data-game="tetris"]').hidden) return;
+    listen(tetrisStart, 'click', startTetris);
+    section.querySelectorAll('.tetris-controls button').forEach(function (button) { listen(button, 'click', function () { moveTetris(button.dataset.action); }); });
+    listen(document, 'keydown', function (event) {
+      if (!gameActive('tetris') || !tetrisTimer || !section.contains(event.target) || event.target.closest('input, textarea, [contenteditable], [role=dialog]')) return;
       var actions = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'rotate', ArrowDown: 'drop', ' ': 'drop' };
       if (actions[event.key]) { event.preventDefault(); moveTetris(actions[event.key]); }
     });
@@ -487,7 +496,7 @@
         return count >= 5;
       });
     }
-    gomokuCanvas.addEventListener('click', function (event) {
+    listen(gomokuCanvas, 'click', function (event) {
       if (gomokuOver) return;
       var rect = gomokuCanvas.getBoundingClientRect();
       var scaleX = gomokuCanvas.width / rect.width, scaleY = gomokuCanvas.height / rect.height;
@@ -499,16 +508,19 @@
         if (gomokuTurn === 1) { gomokuWins += 1; gomokuWinsNode.textContent = gomokuWins; updateHubRecord('gomoku', gomokuWins); writeRecord('thorn-gomoku-best', gomokuWins); }
       } else { gomokuTurn = gomokuTurn === 1 ? 2 : 1; gomokuTurnNode.textContent = gomokuTurn === 1 ? '黑' : '白'; }
     });
-    section.querySelector('.gomoku-reset').addEventListener('click', resetGomoku);
+    listen(section.querySelector('.gomoku-reset'), 'click', resetGomoku);
     resetGomoku();
+    listen(document, 'visibilitychange', function () { if (document.hidden) stopGames(); });
   }
 
   function initMinimalExperience() {
-    enhanceHomeHero();
     buildPlayground();
     revealContent();
   }
 
+  document.addEventListener('pjax:send', function () { destroyPlayground(); });
+  window.addEventListener('pagehide', function () { destroyPlayground(); });
+  window.addEventListener('pageshow', initMinimalExperience);
   document.addEventListener('DOMContentLoaded', initMinimalExperience);
   document.addEventListener('pjax:complete', initMinimalExperience);
 })();
