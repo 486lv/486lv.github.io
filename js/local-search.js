@@ -252,6 +252,7 @@ window.addEventListener('load', () => {
 
   const renderResults = (searchIndex = localSearch) => {
     if (!searchIndex.isfetched) return
+    const renderStarted = performance.now()
     let searchText = input.value.trim().toLowerCase()
     isXml && (searchText = searchText.replace(/</g, '&lt;').replace(/>/g, '&gt;'))
     if (searchText !== '') $loadingStatus.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>'
@@ -289,6 +290,8 @@ window.addEventListener('load', () => {
     }
 
     $loadingStatus.textContent = ''
+    performance.clearMeasures('thorn-search-render')
+    performance.measure('thorn-search-render', { start: renderStarted, end: performance.now() })
   }
 
   let fullMode = false

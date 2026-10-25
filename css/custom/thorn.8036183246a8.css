@@ -1925,3 +1925,30 @@ body.is-page-entering #page-header #site-info { opacity: 0; }
   #post-meta .post-meta-date .fa-history,
   #post-meta .post-meta-wordcount .fa-clock { margin-left: 10px; }
 }
+
+/* reading.css */
+/* Reading refinements shared by the three review reports. */
+@media (min-width: 769px) {
+  #body-wrap.post #page-header { height: auto !important; min-height: 240px; padding: 96px 32px 30px; }
+  #page-header #post-info { position: static !important; width: min(1180px, 100%); margin: auto; padding: 0; transform: none; }
+  #page-header #post-info .post-title { font-size: clamp(2.25rem, 4.2vw, 3.6rem) !important; line-height: 1.15; overflow-wrap: anywhere; }
+  .post .layout#content-inner { margin-top: 24px !important; }
+}
+.reading-tools { display: flex; justify-content: flex-end; margin: 0 0 20px; }
+.reading-tools button { min-height: 44px; padding: 8px 14px; color: var(--mono-text-secondary); background: var(--mono-surface); border: 1px solid var(--mono-border); border-radius: 99px; font: inherit; font-size: 13px; cursor: pointer; }
+.reading-tools button[aria-pressed="true"] { color: var(--mono-text); border-color: var(--mono-text); }
+[data-theme="light"] .reading-tools { display: none; }
+[data-theme="dark"][data-reading-tone="soft"] body:has(#body-wrap.post) { --mono-bg: #151719; --mono-surface: #202326; --mono-surface-hover: #292d31; --mono-text: #e3e3e7; --mono-text-secondary: #b4b5bb; --mono-border: #45494e; }
+.about-quote { margin: 24px 0 0 !important; padding: 16px 0 0 !important; border-top: 1px solid var(--mono-border); color: var(--mono-text-secondary) !important; font-family: var(--mono-display-font); font-size: 15px !important; line-height: 1.6; }
+.about-stage-meta, .about-stage-coordinates, .about-signal small, .about-scroll-cue, .about-story-end span,
+.arcade-number, .arcade-card small, .arcade-record span, .arcade-hub-head, .game-module-head > div > span,
+.reaction-status, .reaction-score span, .reaction-score small, .fp-latest span, .gallery-item small { font-size: 12px; }
+.about-stage-meta, .about-stage-coordinates { flex-wrap: wrap; gap: 6px; letter-spacing: .04em; }
+.arcade-hub-head { flex-wrap: wrap; gap: 8px 20px; }
+.signal-center small { font-size: 12px; letter-spacing: .04em; }
+.fp-eyebrow, .editorial-kicker { font-size: 12px; }
+.fp-title::before, .reading-next > span::before, #archive .article-sort-title::after { display: inline-block; width: 10px; height: 22px; margin-right: 12px; vertical-align: middle; background: currentColor; clip-path: polygon(50% 0,62% 44%,100% 55%,62% 64%,50% 100%,38% 64%,0 55%,38% 44%); content: ""; }
+#archive .article-sort-title::after { margin: 0 0 0 12px; }
+body.motion-enabled .motion-section { transition-duration: 220ms, 240ms; }
+#recent-posts .recent-post-item { transition-duration: 220ms, 240ms !important; }
+body #content-inner { transition-duration: 180ms, 240ms; }

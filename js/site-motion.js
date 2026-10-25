@@ -132,7 +132,9 @@
         }
       });
       trigger.parentElement.addEventListener('focusout', function (event) {
-        if (!trigger.parentElement.contains(event.relatedTarget)) setOpen(false);
+        // Safari can report no focus target while pressing a menu link. Keep the
+        // hovered menu available until the click has been dispatched.
+        if (!trigger.parentElement.contains(event.relatedTarget) && !trigger.parentElement.matches(':hover')) setOpen(false);
       });
       if (trigger.closest('#sidebar-menus')) {
         trigger.setAttribute('aria-expanded', String(!trigger.classList.contains('hide')));
@@ -371,6 +373,14 @@
   });
 
   document.addEventListener('click', function (event) {
+    var toneToggle = event.target.closest('[data-reading-tone-toggle]');
+    if (toneToggle) {
+      var tone = document.documentElement.dataset.readingTone === 'soft' ? 'contrast' : 'soft';
+      document.documentElement.dataset.readingTone = tone;
+      try { window.localStorage.setItem('thorn-reading-tone', tone); } catch (error) {}
+      toneToggle.setAttribute('aria-pressed', String(tone === 'soft'));
+      return;
+    }
     var link = event.target.closest('.random-reading');
     if (!link) return;
     try {
@@ -379,7 +389,26 @@
     } catch (error) {}
   }, true);
 
+  function syncPageMetadata() {
+    var embedded = document.getElementById('thorn-page-metadata');
+    if (!embedded) return;
+    var data;
+    try { data = JSON.parse(embedded.textContent); } catch (error) { return; }
+    [['name', 'description', data.description], ['property', 'og:description', data.description], ['property', 'og:title', data.title], ['property', 'og:url', data.canonical]].forEach(function (item) {
+      if (!item[2]) return;
+      var tag = document.head.querySelector('meta[' + item[0] + '="' + item[1] + '"]');
+      if (!tag) { tag = document.createElement('meta'); tag.setAttribute(item[0], item[1]); document.head.appendChild(tag); }
+      tag.content = item[2];
+    });
+    if (data.canonical) {
+      var canonical = document.head.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.href = data.canonical;
+    }
+  }
+
   function initMotion() {
+    syncPageMetadata();
+    document.querySelectorAll('[data-reading-tone-toggle]').forEach(function (button) { button.setAttribute('aria-pressed', String(document.documentElement.dataset.readingTone === 'soft')); });
     revealSections();
     enhanceControls();
     markCurrentNavigation();

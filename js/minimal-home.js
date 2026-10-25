@@ -18,6 +18,11 @@
     document.body.classList.add('home-reveal-enabled');
     items.forEach(function (item, index) {
       item.classList.add('reveal-observed');
+      var bounds = item.getBoundingClientRect();
+      if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+        item.classList.add('reveal-is-visible');
+        return;
+      }
       item.style.transitionDelay = Math.min(index, 4) * 70 + 'ms';
       observer.observe(item);
     });
