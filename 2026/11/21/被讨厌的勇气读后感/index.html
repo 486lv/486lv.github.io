@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>《被讨厌的勇气》读后感 | Thorn's blog</title><meta name="author" content="Thorn"><meta name="copyright" content="Thorn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="从目的论、课题分离到共同体感觉，随五夜对话思考自由、归属与如何认真活在当下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《被讨厌的勇气》读后感">
+<meta property="og:url" content="https://486lv.github.io/2026/11/21/%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94%E8%AF%BB%E5%90%8E%E6%84%9F/index.html">
+<meta property="og:site_name" content="Thorn&#39;s blog">
+<meta property="og:description" content="从目的论、课题分离到共同体感觉，随五夜对话思考自由、归属与如何认真活在当下。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://486lv.github.io/images/courage-to-be-disliked.jpg">
+<meta property="article:published_time" content="2026-11-21T10:56:00.000Z">
+<meta property="article:modified_time" content="2026-11-21T11:01:22.591Z">
+<meta property="article:author" content="Thorn">
+<meta property="article:tag" content="读后感">
+<meta property="article:tag" content="阿德勒心理学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://486lv.github.io/images/courage-to-be-disliked.jpg"><link rel="shortcut icon" href="/favicon.png"><link rel="canonical" href="https:&#x2F;&#x2F;486lv.github.io&#x2F;2026&#x2F;11&#x2F;21&#x2F;%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94%E8%AF%BB%E5%90%8E%E6%84%9F&#x2F;"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="/vendor/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+          
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', (e) => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Thorn","link":"链接: ","source":"来源: Thorn's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《被讨厌的勇气》读后感',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-11-21 19:01:22'
+}</script><link rel="stylesheet" href="/css/custom/thorn.8036183246a8.css"><!-- hexo injector head_end start --><style id="thorn-appearance">:root{--mono-radius:16px;--mono-radius-sm:12px;--mono-radius-lg:20px;--mono-transition:220ms cubic-bezier(.2,.65,.3,1);--mono-post-spacing:44px;--mono-hero-height:520px}</style><script>(function(){var d=document.documentElement;d.dataset.motion="normal";var c="system";if(c==='light'||c==='dark')d.dataset.theme=c;try{d.dataset.readingTone=localStorage.getItem('thorn-reading-tone')==='soft'?'soft':'contrast';}catch(e){d.dataset.readingTone='contrast';}})();</script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="/vendor/katex/katex.min.css"><link rel="apple-touch-icon" href="/apple-touch-icon.png"></head><body><div id="web_bg" style="background-color: #ffffff;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img width="1089" height="1080" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/30head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-list"></i><span> 文章</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> 专题</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 探索</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/footprints/"><i class="fa-fw fas fa-location-dot"></i><span> 足迹</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/playground/"><i class="fa-fw fas fa-gamepad"></i><span> 玩耍 · Playground</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><script type="application/json" id="thorn-page-metadata">{"title":"《被讨厌的勇气》读后感 | Thorn's blog","description":"从目的论、课题分离到共同体感觉，随五夜对话思考自由、归属与如何认真活在当下。","canonical":"https://486lv.github.io/2026/11/21/%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94%E8%AF%BB%E5%90%8E%E6%84%9F/"}</script><header class="post-bg fixed" id="page-header" style="background-image: url(/images/courage-to-be-disliked.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Thorn's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">《被讨厌的勇气》读后感</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-list"></i><span> 文章</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> 专题</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 探索</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/footprints/"><i class="fa-fw fas fa-location-dot"></i><span> 足迹</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/playground/"><i class="fa-fw fas fa-gamepad"></i><span> 玩耍 · Playground</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">《被讨厌的勇气》读后感</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-11-21T10:56:00.000Z" title="发表于 2026-11-21 18:56:00">2026-11-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-11-21T11:01:22.591Z" title="更新于 2026-11-21 19:01:22">2026-11-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="reading-tools"><button type="button" data-reading-tone-toggle aria-pressed="false">柔和夜读</button></div><article class="post-content" id="article-container"><p><strong>一个人究竟应该如何生活，才能获得自由与幸福？</strong></p>
+<p>《被讨厌的勇气》给出了自己的答案：摆脱过去的束缚，停止与他人竞争，不再依赖外界的认可，在与他人的联结中找到归属，并认真度过当下的每一个瞬间。</p>
+<hr>
+<h2 id="第一夜-目的论：过去与现在的选择">第一夜｜目的论：过去与现在的选择</h2>
+<blockquote>
+<p><strong>目的论</strong>：从行为所指向的目标出发，理解一个人为什么会采取某种行动。</p>
+</blockquote>
+<h3 id="一-目的论">一、目的论</h3>
+<p>我们习惯于用因果关系解释人生：性格孤僻，是因为童年缺乏关爱；畏惧社交，是因为曾遭人嘲笑；无法改变现状，是因为过往造就了今天的自己。</p>
+<p>阿德勒则更关注行为背后的目的。</p>
+<p>例如，一个人迟迟无法改变，可能是因为他希望避免改变带来的未知与不安，于是选择维持熟悉的生活方式，并将“不愿改变”解释为“无法改变”。</p>
+<p><strong>看似是过去的原因阻碍了改变，实则可能是当下的目的维持了现状。</strong></p>
+<p>阿德勒认为，如果过去完全决定了现在，而过去又无可更改，那么今天的我们似乎也就失去了改变人生的可能。所以，改变需要勇气，获得幸福同样需要勇气。</p>
+<h3 id="二-过去塑造起点-却不规定终点">二、过去塑造起点，却不规定终点</h3>
+<blockquote>
+<p>“无论之前的人生发生过什么，都对今后的人生如何度过没有影响。”</p>
+</blockquote>
+<p>一个人真的能够彻底摆脱过去的影响吗？</p>
+<p>那些曾经遇见的人、经历的事、受到的伤害，乃至微不足道却难以忘怀的瞬间，不都在潜移默化中塑造着今天的我们吗？</p>
+<p>我始终觉得，人无法彻底割裂自己的过去。那些经历早已融入我们的性格、认知，以及看待世界的方式。如果否认这些影响，又该如何理解今天的自己？</p>
+<p>但过去的影响，并不意味着未来已经注定。</p>
+<p>一个人因童年长期遭受否定，逐渐形成了“我不值得被爱”的信念。如果有一天，他借由新的经历与反思重新认识自己，不再相信当初的判断，那些过去的伤害依然真实存在，只是他已经能够以新的方式理解它们。</p>
+<p>人可以重新审视自己的经历，也能够通过新的行动改变未来。我们无法改写过去，却依然能够创造新的因果。</p>
+<blockquote>
+<p><strong>过去塑造了我们当下的起点，却不必然规定我们未来的终点。</strong></p>
+</blockquote>
+<p>我想起陶渊明在《归去来兮辞》中的那句话：</p>
+<blockquote>
+<p>“悟已往之不谏，知来者之可追。”</p>
+</blockquote>
+<p>过去值得铭记，但它不该拥有对未来的最终解释权。</p>
+<hr>
+<h2 id="第二夜-一切烦恼都来自人际关系">第二夜｜一切烦恼都来自人际关系</h2>
+<blockquote>
+<p>“健全的自卑感不是来自与别人的比较，而是来自与‘理想的自己’的比较。”</p>
+</blockquote>
+<h3 id="一-自卑-优越与竞争">一、自卑、优越与竞争</h3>
+<p>阿德勒认为，一切烦恼都来自人际关系。当我们把别人的优秀视为自己的不足，把别人的成功看作自己的失败，人生便成了一场永无止境的竞争。</p>
+<p>书中提到了<strong>优越情结</strong>：有些人看似骄傲自大，处处炫耀自己的成就，实际上却可能隐藏着强烈的自卑感。他们需要通过外界的认可证明自己的价值，甚至借助不幸凸显自己的特殊。</p>
+<p>真正拥有自信的人，大概无须时时向别人证明自己的优越。</p>
+<p>因此，阿德勒主张以理想的自己作为成长的参照，将注意力放在自身的进步上。</p>
+<p>但这里我产生了一个疑问：<strong>所谓“理想的自己”，难道不也是在与他人的比较中逐渐形成的吗？</strong></p>
+<p>我们对优秀的定义、对成功的想象，都不可避免地受到社会环境与他人的影响。那么，与理想的自己比较，是否只是换了一种形式的竞争？</p>
+<p>仔细想来，倒也未必。</p>
+<p>当我敬佩一位优秀的数学家，希望自己也拥有探索数学的能力时，我可以将他视为榜样，学习他的思考方式。至于将来能否超越他，其实并不重要。</p>
+<p>理想可以来自他人，追求理想却无须以战胜他人为目标。</p>
+<p>问题在于，我们究竟想过怎样的生活？我们所追求的成就，是自己真正认可的目标，还是为了在某种评价体系中证明自己的优越？</p>
+<h3 id="二-嫉妒与不安全感">二、嫉妒与不安全感</h3>
+<blockquote>
+<p>“把他人的幸福看作‘我的失败’，所以才无法给予祝福。”</p>
+</blockquote>
+<p>吹灭别人的灯，并不会让自己更加光明。</p>
+<p>道理容易理解，情绪却难以消解。当别人获得自己渴望的成绩与机会时，我依然难免感到失落。</p>
+<p>我想，<strong>嫉妒的背后，或许还隐藏着一种对未来的不安全感。</strong> 害怕自己不够优秀，害怕失去机会，更害怕一次失败便失去重新选择的余地。</p>
+<p>而这种恐惧有着现实的基础。</p>
+<p>人与人的起点本就不同。这就像两个人同时走在钢丝上，一个人的脚下铺着厚厚的海绵垫，即使失足，也能重新站起来；另一个人的脚下却是悬崖，他可能根本没有犯错的余地。</p>
+<p><strong>恐惧不会因为一句“你应该勇敢”，就失去它的现实基础。</strong></p>
+<p>因此，我对将嫉妒完全归结于个人认知的解释有所保留。在资源有限的竞争中，别人的成功有时确实意味着自己失去了一次机会。</p>
+<p>可即使如此，嫉妒又能改变什么呢？</p>
+<p>别人的优秀不会因为我的嫉妒而减少。倘若始终通过战胜他人确认自身价值，无论取得多少成就，都可能陷入新的比较。</p>
+<p><strong>承认现实中的不平等，并不意味着必须将人生过成一场与他人的战争。</strong></p>
+<h3 id="三-人生的三大课题">三、人生的三大课题</h3>
+<p>阿德勒将人生中的人际关系归纳为三大课题：<strong>交友、工作与爱。</strong></p>
+<p>面对这些课题，他提出两个行为目标：<strong>自立，以及与社会和谐共处。</strong> 支撑它们的，则是两个心理目标：<strong>“我有能力”与“人人都是我的伙伴”。</strong></p>
+<p>人际关系中有竞争，也有合作、信任与爱。我们无法要求所有人按照自己的期待行动，却可以尝试改变自己与他人相处的方式。</p>
+<p>尤其是书中对爱的描述，让我很有感触：<strong>与一个人在一起时，可以无拘无束，不必因自卑而隐藏自己，也不必为了证明优越而不断炫耀。</strong></p>
+<p>能够自然地相处，安心地做自己，不必时时担心对方会因为自己的某些不足而离开。我想，这是一段亲密关系中很令人向往的状态。</p>
+<hr>
+<h2 id="第三夜-课题分离：自由是被讨厌的勇气">第三夜｜课题分离：自由是被讨厌的勇气</h2>
+<h3 id="一-认可欲求：我们究竟为谁而活？">一、认可欲求：我们究竟为谁而活？</h3>
+<p>我们常常认为，只有获得他人的赞赏，才能证明自己具有价值；只有得到外界的肯定，才能消除自卑、建立自信。</p>
+<p>于是，我们努力成为父母眼中优秀的孩子、老师眼中出色的学生、社会眼中成功的人。</p>
+<p>但如果始终为了满足他人的期待而活，那么我们所度过的，究竟是自己的人生，还是别人的人生？</p>
+<p>阿德勒反对将他人的认可作为生活的目的。</p>
+<p>当然，来自他人的肯定能够给予鼓励，也能帮助我们认识自己。问题在于，当一个人过分依赖外界评价时，他的选择就很容易受到他人期待的左右。</p>
+<p><strong>我们可以期待被认可，却不必为了被认可而活。</strong></p>
+<h3 id="二-课题分离：谁的人生-谁来负责">二、课题分离：谁的人生，谁来负责</h3>
+<p>为了摆脱对他人评价的依赖，阿德勒提出了<strong>课题分离</strong>。</p>
+<p>判断一件事究竟是谁的课题，只需要考虑：<strong>某种选择所带来的结果，最终由谁来承担？</strong></p>
+<p>我可以选择自己认为正确的道路，并为自己的选择负责。至于别人是否赞同、是否喜欢我，则由他们自己决定。同样，我也应该尊重别人的选择，避免以自己的期待要求对方。</p>
+<p>但这又引出了一个现实问题：<strong>我可以不干涉别人的课题，却无法阻止别人试图干涉我的人生。</strong></p>
+<p>尤其当双方拥有不同的权力与资源时，拒绝干涉可能意味着承担实际损失。有些决定还会同时影响多个人，需要共同协商责任，难以简单地划分归属。</p>
+<p>所以，课题分离的意义，在于帮助我们明确彼此的责任，认识自己的选择空间，并在现实条件下维护个人边界。</p>
+<p>各自承担应有的责任，也尊重彼此的选择。</p>
+<h3 id="三-自由的代价：勇气与底气">三、自由的代价：勇气与底气</h3>
+<blockquote>
+<p>“毫不在意别人的评价，不害怕被别人讨厌，不追求被他人认可。”</p>
+</blockquote>
+<p>阿德勒认为，如果无法承受被别人讨厌的可能，我们就很难按照自己的意愿生活。</p>
+<p><strong>被讨厌，是自由可能需要承担的代价。</strong></p>
+<p>但我始终有一个疑问：<strong>自由是否也需要物质基础？</strong></p>
+<p>有时候，我觉得自己当下的许多烦恼都与金钱有关。如果拥有足够的财富，我便能获得更多选择的机会，拥有探索生活的自由，也不必时时担心失败的代价。</p>
+<p>这与第二夜的思考相通：<strong>人与人之间的自由，并不总是拥有相同的成本。</strong></p>
+<p>一个人可以不在意上司的评价，但如果失去工作就意味着失去生活来源，他真的能够从容地拒绝上司的无理要求吗？</p>
+<p>因此，我希望自己拥有面对他人评价的勇气，也能逐渐积累承担选择后果的底气。金钱未必能保证幸福，却能够让人拥有更多选择生活的余地。</p>
+<p>书中还有一句话让我印象深刻：</p>
+<blockquote>
+<p>“命运不是靠传说决定，而要靠自己的剑开拓出来。”</p>
+</blockquote>
+<p>人生没有能够预知结局的指南。我们可以听取他人的建议，但终究需要自己作出选择，并承担相应的责任。</p>
+<p><strong>命运未必完全掌握在自己手中，但至少，我们不应该轻易将握剑的权利交给别人。</strong></p>
+<hr>
+<h2 id="第四夜-人际关系的终点：共同体感觉">第四夜｜人际关系的终点：共同体感觉</h2>
+<blockquote>
+<p><strong>人际关系的起点是“课题分离”，终点是“共同体感觉”。</strong></p>
+</blockquote>
+<h3 id="一-共同体感觉">一、共同体感觉</h3>
+<p>第三夜提出了课题分离，但这又引出了一个问题：<strong>如果我们不再依赖他人的认可，也不再干涉彼此的课题，人与人之间是否会越来越疏远？</strong></p>
+<p>第四夜给出的答案是<strong>共同体感觉</strong>：将他人视为伙伴，并在与他人的联结中感受到自己的位置与归属。</p>
+<p>课题分离帮助我们明确彼此的边界。在此基础上，我们依然可以主动关心他人、参与共同生活。</p>
+<p>阿德勒认为，归属感需要我们主动参与。我们应该学会关心他人的需要，思考自己能够为共同体做些什么。</p>
+<p>例如，孩子是否努力学习，是孩子自己的课题。父母需要尊重他的自主性，也可以给予支持，帮助他逐渐建立独立面对困难的能力。</p>
+<p>在这样的关系中，我们既不必控制对方，也无须通过迎合来维系彼此的联系。</p>
+<p>阿德勒所说的共同体还有着广泛的含义。家庭、学校、工作单位，都只是我们所处的众多共同体之一。即使无法在某个群体中找到归属，我们依然可以与更广阔的世界建立联系。</p>
+<h3 id="二-从他人的评价到自身的价值">二、从他人的评价到自身的价值</h3>
+<blockquote>
+<p>不要用“行为”标准而是用“存在”标准去看待他人；</p>
+</blockquote>
+<p><strong>一味在意“别人怎么看自己”，实际上也是一种自我中心的表现。</strong></p>
+<p>当我们过分在意他人的认可时，看似关心别人，真正关注的却是别人眼中的自己。</p>
+<p>阿德勒认为，这种对评价的依赖容易使人陷入以高低、优劣衡量彼此的<strong>纵向关系</strong>。他提倡人格平等的<strong>横向关系</strong>，主张以鼓励代替表扬与批评。</p>
+<p>真正值得警惕的，是用一个人的成绩与能力衡量他的全部价值。</p>
+<p><strong>在能力与行为上允许差异，在人格与尊严上坚持平等。</strong></p>
+<p>这又引出了一个问题：<strong>人的价值究竟来自哪里？</strong></p>
+<p>阿德勒认为，人能够通过对共同体的贡献感受到自身价值，同时又主张以“存在”标准看待他人。</p>
+<p>我想，这里需要区分人的价值与对自身价值的感受。帮助他人能够带来成就感与归属感，但即使一个人失去了创造价值的能力，也依然值得尊重与关爱。</p>
+<p>如果始终需要证明自己对别人有用，才能确认自身价值，我们是否又陷入了对“被需要”的依赖？</p>
+<p><strong>贡献能够让我们感受到自身的价值，但人的尊严不应该取决于贡献的多少。</strong></p>
+<h3 id="三-在不平等的世界中追求平等">三、在不平等的世界中追求平等</h3>
+<p>阿德勒描绘了一种令人向往的共同体：人们以平等、尊重与合作的方式相处。</p>
+<p>但我始终觉得，这种共同体感觉多少有些理想化。</p>
+<p>现实中存在利益冲突、资源竞争与权力差异。一个员工可以认为自己与上司在人格上平等，却无法因此消除实际权力上的不对等。</p>
+<p><strong>我可以选择如何看待他人，却无法决定他人如何对待我。</strong></p>
+<p>但我想，这并不妨碍我们追求共同体感觉。</p>
+<p>我们无法消除所有竞争，也无法保证每个人都怀有善意，但至少可以决定自己如何参与这些关系。在竞争中尊重对手，在分歧中尝试理解他人，也不必因为别人的优秀而否定自己。</p>
+<p><strong>现实中的不平等确实存在，但我们仍然可以选择以平等的姿态对待他人。</strong></p>
+<p>即使现实远未达到这样的状态，我们依然可以朝着这个方向努力。</p>
+<hr>
+<h2 id="第五夜-认真的人生-活在当下">第五夜｜认真的人生“活在当下”</h2>
+<blockquote>
+<p><strong>人生是连续的刹那，我们只能活在“此时此刻”。</strong></p>
+</blockquote>
+<h3 id="一-自我接纳-他者信赖与他者贡献">一、自我接纳、他者信赖与他者贡献</h3>
+<p>第五夜进一步提出了实现共同体感觉的三个要素：<strong>自我接纳、他者信赖和他者贡献。</strong></p>
+<p><strong>自我接纳</strong>，要求我们诚实地面对当下的自己，承认能力上的不足，接受暂时无法改变的现实，同时继续努力改善能够改变的事情。</p>
+<p><strong>他者信赖</strong>，意味着我们愿意主动信任他人，即使无法保证对方一定会给予善意的回应。阿德勒强调不附加条件的信赖，但我觉得，现实生活中的信任仍然需要一定的判断与边界。</p>
+<p><strong>他者贡献</strong>，则是主动参与共同体，在帮助他人、承担责任的过程中，感受到自己与世界的联结。</p>
+<p>三者相互联系。自我接纳让我们能够坦然面对自身的不足；信赖他人使建立关系成为可能；参与和贡献则使我们进一步获得归属感。</p>
+<p>这也回应了第二夜中阿德勒提出的目标：<strong>自立、与社会和谐共处，以及“我有能力”与“人人都是我的伙伴”的意识。</strong></p>
+<p>而且，幸福还有许多其他来源。</p>
+<p>读一本喜欢的书，思考一个困扰已久的问题，欣赏某件艺术作品，或者探索一个陌生的地方，都可能使我感到充实。</p>
+<h3 id="二-人生是连续的刹那">二、人生是连续的刹那</h3>
+<p>书中的哲人将人生比作舞蹈。我们在每一个瞬间起舞，人生便由这些连续的瞬间构成。</p>
+<p>可我们似乎总是习惯于为未来设定目标，将当下视为抵达某个终点前的准备阶段。</p>
+<p>为了考上理想的大学而学习，为了获得更好的工作而努力，为了将来能够幸福而忍受现在的不幸。</p>
+<p>仿佛只有抵达那个终点，之前的一切付出才终于具有意义。</p>
+<p><strong>但如果我们始终把幸福寄托于尚未到来的未来，那么今天的自己又该如何度过？</strong></p>
+<p>我也时常为了未来的目标而努力，希望拥有更好的能力、更多的机会，以及更加从容的生活。</p>
+<p>可如果未来永远存在新的目标，这种准备又要持续到什么时候？</p>
+<p><strong>我会不会在不断追赶未来的过程中，反而忽略了自己正在经历的人生？</strong></p>
+<p>我曾经以为，只要达到某个目标，自己便能够轻松下来。但一个目标完成后，往往又会出现新的目标。我们总能找到继续努力的理由，却未必会为当下的生活留出足够的时间。</p>
+<p>人生中的许多事情，本来就具有当下的意义。</p>
+<p>学习可以带来知识本身的乐趣，研究也能让人享受探索与发现的过程。即使最终未能抵达期待的终点，那些认真学习、思考与探索的瞬间，依然值得珍惜。</p>
+<p><strong>人生不必等到某个目标实现之后，才算真正开始。</strong></p>
+<hr>
+<h2 id="结语">结语</h2>
+<p><img width="1280" height="1708" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/courage-to-be-disliked.jpg" alt="文章配图"></p>
+</article><nav class="reading-next" aria-label="阅读下一站"><span>下一站 / KEEP EXPLORING</span><a href="&#x2F;2026&#x2F;10&#x2F;18&#x2F;22岁生日寄语&#x2F;"><small>继续阅读</small><strong>22岁生日寄语 →</strong></a><a class="random-reading" href="&#x2F;2024&#x2F;10&#x2F;08&#x2F;线段树&#x2F;" data-choices="[&quot;&#x2F;2026&#x2F;10&#x2F;18&#x2F;22岁生日寄语&#x2F;&quot;,&quot;&#x2F;2026&#x2F;07&#x2F;22&#x2F;计院优本面试（复试）经验分享&#x2F;&quot;,&quot;&#x2F;2025&#x2F;10&#x2F;25&#x2F;21岁生日寄语&#x2F;&quot;,&quot;&#x2F;2025&#x2F;10&#x2F;22&#x2F;信息安全数学基础实验&#x2F;&quot;,&quot;&#x2F;2024&#x2F;11&#x2F;13&#x2F;编译原理&#x2F;&quot;,&quot;&#x2F;2024&#x2F;11&#x2F;07&#x2F;高数笔记——常微分方程&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;MIPS汇编语言写冒泡排序&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;动态规划总结&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;小猿口算炸鱼cv&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;最小生成树&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;最短路问题合集&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;线段树&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;07&#x2F;start&#x2F;&quot;]"><small>随机漫游</small><strong>让好奇心选一篇 ↗</strong></a></nav><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://486lv.github.io">Thorn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://486lv.github.io/2026/11/21/%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94%E8%AF%BB%E5%90%8E%E6%84%9F/">https://486lv.github.io/2026/11/21/%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94%E8%AF%BB%E5%90%8E%E6%84%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://486lv.github.io" target="_blank" rel="noopener noreferrer">Thorn's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/">读后感</a><a class="post-meta__tags" href="/tags/%E9%98%BF%E5%BE%B7%E5%8B%92%E5%BF%83%E7%90%86%E5%AD%A6/">阿德勒心理学</a></div></div><nav class="pagination-post" id="pagination"><a class="next-post pull-full" href="/2026/10/18/22%E5%B2%81%E7%94%9F%E6%97%A5%E5%AF%84%E8%AF%AD/" title="22岁生日寄语"><img width="1280" height="720" class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/birthday-22-2026.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">22岁生日寄语</div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%A4%9C-%E7%9B%AE%E7%9A%84%E8%AE%BA%EF%BC%9A%E8%BF%87%E5%8E%BB%E4%B8%8E%E7%8E%B0%E5%9C%A8%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-text">第一夜｜目的论：过去与现在的选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E7%9B%AE%E7%9A%84%E8%AE%BA"><span class="toc-text">一、目的论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E8%BF%87%E5%8E%BB%E5%A1%91%E9%80%A0%E8%B5%B7%E7%82%B9-%E5%8D%B4%E4%B8%8D%E8%A7%84%E5%AE%9A%E7%BB%88%E7%82%B9"><span class="toc-text">二、过去塑造起点，却不规定终点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%9C-%E4%B8%80%E5%88%87%E7%83%A6%E6%81%BC%E9%83%BD%E6%9D%A5%E8%87%AA%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB"><span class="toc-text">第二夜｜一切烦恼都来自人际关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E8%87%AA%E5%8D%91-%E4%BC%98%E8%B6%8A%E4%B8%8E%E7%AB%9E%E4%BA%89"><span class="toc-text">一、自卑、优越与竞争</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E5%AB%89%E5%A6%92%E4%B8%8E%E4%B8%8D%E5%AE%89%E5%85%A8%E6%84%9F"><span class="toc-text">二、嫉妒与不安全感</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E4%BA%BA%E7%94%9F%E7%9A%84%E4%B8%89%E5%A4%A7%E8%AF%BE%E9%A2%98"><span class="toc-text">三、人生的三大课题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%A4%9C-%E8%AF%BE%E9%A2%98%E5%88%86%E7%A6%BB%EF%BC%9A%E8%87%AA%E7%94%B1%E6%98%AF%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94"><span class="toc-text">第三夜｜课题分离：自由是被讨厌的勇气</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E8%AE%A4%E5%8F%AF%E6%AC%B2%E6%B1%82%EF%BC%9A%E6%88%91%E4%BB%AC%E7%A9%B6%E7%AB%9F%E4%B8%BA%E8%B0%81%E8%80%8C%E6%B4%BB%EF%BC%9F"><span class="toc-text">一、认可欲求：我们究竟为谁而活？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E8%AF%BE%E9%A2%98%E5%88%86%E7%A6%BB%EF%BC%9A%E8%B0%81%E7%9A%84%E4%BA%BA%E7%94%9F-%E8%B0%81%E6%9D%A5%E8%B4%9F%E8%B4%A3"><span class="toc-text">二、课题分离：谁的人生，谁来负责</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E8%87%AA%E7%94%B1%E7%9A%84%E4%BB%A3%E4%BB%B7%EF%BC%9A%E5%8B%87%E6%B0%94%E4%B8%8E%E5%BA%95%E6%B0%94"><span class="toc-text">三、自由的代价：勇气与底气</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E5%A4%9C-%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E7%BB%88%E7%82%B9%EF%BC%9A%E5%85%B1%E5%90%8C%E4%BD%93%E6%84%9F%E8%A7%89"><span class="toc-text">第四夜｜人际关系的终点：共同体感觉</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E5%85%B1%E5%90%8C%E4%BD%93%E6%84%9F%E8%A7%89"><span class="toc-text">一、共同体感觉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E4%BB%8E%E4%BB%96%E4%BA%BA%E7%9A%84%E8%AF%84%E4%BB%B7%E5%88%B0%E8%87%AA%E8%BA%AB%E7%9A%84%E4%BB%B7%E5%80%BC"><span class="toc-text">二、从他人的评价到自身的价值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E5%9C%A8%E4%B8%8D%E5%B9%B3%E7%AD%89%E7%9A%84%E4%B8%96%E7%95%8C%E4%B8%AD%E8%BF%BD%E6%B1%82%E5%B9%B3%E7%AD%89"><span class="toc-text">三、在不平等的世界中追求平等</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E5%A4%9C-%E8%AE%A4%E7%9C%9F%E7%9A%84%E4%BA%BA%E7%94%9F-%E6%B4%BB%E5%9C%A8%E5%BD%93%E4%B8%8B"><span class="toc-text">第五夜｜认真的人生“活在当下”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E8%87%AA%E6%88%91%E6%8E%A5%E7%BA%B3-%E4%BB%96%E8%80%85%E4%BF%A1%E8%B5%96%E4%B8%8E%E4%BB%96%E8%80%85%E8%B4%A1%E7%8C%AE"><span class="toc-text">一、自我接纳、他者信赖与他者贡献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E4%BA%BA%E7%94%9F%E6%98%AF%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%88%B9%E9%82%A3"><span class="toc-text">二、人生是连续的刹那</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By Thorn</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/vendor/fancybox/fancybox.umd.js"></script><script src="/vendor/lazyload/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-omega-virid.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-omega-virid.vercel.app',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else btf.getScript('/vendor/twikoo/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script defer src="/js/minimal-home.js?v=63812d26d288"></script><script defer src="/js/site-motion.js?v=468c5ca35bba"></script><script src="/vendor/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([href="/footprints/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/local-search.js?v=6c7eb55a2e53"></script></div></div><!-- hexo injector body_end start --><script>window.__THORN_APPEARANCE__={"heroEyebrow":"THORN · NOTES & FIELDWORK","heroTitle":"Thorn's blog","heroSubtitle":"记录计算机学习、工程实践，以及旅途与生活。","primaryActionLabel":"阅读文章","primaryActionHref":"#content-inner","secondaryActionLabel":"关于我","secondaryActionHref":"/about/","showPrimaryAction":true,"showSecondaryAction":true,"cardDensity":"comfortable","motion":"normal","radius":16,"colorMode":"system","heroHeight":520};</script><!-- hexo injector body_end end --></body></html>
