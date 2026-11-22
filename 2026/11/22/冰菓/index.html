@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>冰菓 | Thorn's blog</title><meta name="author" content="Thorn"><meta name="copyright" content="Thorn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="从古典部的日常推理出发，谈《冰菓》中的历史记忆、故乡、青春与没有说出口的话。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="冰菓">
+<meta property="og:url" content="https://486lv.github.io/2026/11/22/%E5%86%B0%E8%8F%93/index.html">
+<meta property="og:site_name" content="Thorn&#39;s blog">
+<meta property="og:description" content="从古典部的日常推理出发，谈《冰菓》中的历史记忆、故乡、青春与没有说出口的话。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://486lv.github.io/images/hyouka/opening.webp">
+<meta property="article:published_time" content="2026-11-22T11:00:00.000Z">
+<meta property="article:modified_time" content="2026-11-22T13:07:34.624Z">
+<meta property="article:author" content="Thorn">
+<meta property="article:tag" content="冰菓">
+<meta property="article:tag" content="动画">
+<meta property="article:tag" content="观后感">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://486lv.github.io/images/hyouka/opening.webp"><link rel="shortcut icon" href="/favicon.png"><link rel="canonical" href="https:&#x2F;&#x2F;486lv.github.io&#x2F;2026&#x2F;11&#x2F;22&#x2F;%E5%86%B0%E8%8F%93&#x2F;"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="/vendor/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+          
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', (e) => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Thorn","link":"链接: ","source":"来源: Thorn's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '冰菓',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-11-22 21:07:34'
+}</script><link rel="stylesheet" href="/css/custom/thorn.8036183246a8.css"><!-- hexo injector head_end start --><style id="thorn-appearance">:root{--mono-radius:16px;--mono-radius-sm:12px;--mono-radius-lg:20px;--mono-transition:220ms cubic-bezier(.2,.65,.3,1);--mono-post-spacing:44px;--mono-hero-height:520px}</style><script>(function(){var d=document.documentElement;d.dataset.motion="normal";var c="system";if(c==='light'||c==='dark')d.dataset.theme=c;try{d.dataset.readingTone=localStorage.getItem('thorn-reading-tone')==='soft'?'soft':'contrast';}catch(e){d.dataset.readingTone='contrast';}})();</script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="/vendor/katex/katex.min.css"><link rel="apple-touch-icon" href="/apple-touch-icon.png"></head><body><div id="web_bg" style="background-color: #ffffff;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img width="1089" height="1080" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/30head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-list"></i><span> 文章</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> 专题</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 探索</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/footprints/"><i class="fa-fw fas fa-location-dot"></i><span> 足迹</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/playground/"><i class="fa-fw fas fa-gamepad"></i><span> 玩耍 · Playground</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><script type="application/json" id="thorn-page-metadata">{"title":"冰菓 | Thorn's blog","description":"从古典部的日常推理出发，谈《冰菓》中的历史记忆、故乡、青春与没有说出口的话。","canonical":"https://486lv.github.io/2026/11/22/%E5%86%B0%E8%8F%93/"}</script><header class="post-bg fixed" id="page-header" style="background-image: url(/images/hyouka/opening.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Thorn's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">冰菓</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-list"></i><span> 文章</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> 专题</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 探索</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/footprints/"><i class="fa-fw fas fa-location-dot"></i><span> 足迹</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/playground/"><i class="fa-fw fas fa-gamepad"></i><span> 玩耍 · Playground</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">冰菓</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-11-22T11:00:00.000Z" title="发表于 2026-11-22 19:00:00">2026-11-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-11-22T13:07:34.624Z" title="更新于 2026-11-22 21:07:34">2026-11-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%A7%82%E5%BD%B1/">观影</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">11.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>33分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="reading-tools"><button type="button" data-reading-tone-toggle aria-pressed="false">柔和夜读</button></div><article class="post-content" id="article-container"><blockquote>
+<p>本文以电视动画为主，涉及全剧剧透。</p>
+</blockquote>
+<h2 id="引言：一场始于好奇心的青春">引言：一场始于好奇心的青春</h2>
+<p><img width="1280" height="720" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/hyouka/opening.webp" alt="《冰菓》开篇配图"></p>
+<p>《冰菓》是一部很特别的作品。<a href="#ref-1">〔1〕</a> <a href="#ref-2">〔2〕</a></p>
+<p>它没有惊天动地的冒险，没有要战胜的敌人，也没有一个贯穿始终、必须完成的宏大目标。故事始于一间并不起眼的古典部活动室，始于一位少女突如其来的好奇，始于一个原本只想平静度过高中生活的少年，被迫卷入一件又一件看似微不足道的小事。</p>
+<p>千反田爱瑠的「わたし、気になります！」，为折木奉太郎原本封闭的生活打开了一扇门。门的另一边，是图书馆里奇怪的借阅记录，是一部没有拍完的电影，是文化祭中形形色色的人，也是四十五年前一段几乎被时间掩埋的往事。折木在一次次看似多余的推理中，逐渐走进了这个原本与自己无关的世界。</p>
+<p>初看《冰菓》，很容易被它精致的画面、细腻的日常和四位少年少女之间微妙的互动所吸引。但随着故事深入，我们会发现，那些谜题从来不只是为了寻找一个答案。一本旧文集背后，藏着一个被时代改变命运的少年；一个少女对故乡的介绍，牵连着土地、家族与未来；而一个少年看似平静的内心，也在不知不觉间，因为另一个人的出现而发生变化。</p>
+<p>它写推理，却不止于推理；写青春，也没有把青春描绘成一段永远明媚的时光。作品让我们看到，热烈的理想背后可能有牺牲，平静的日常之中也可能藏着复杂的情感。那些没有说出口的话、没有被理解的往事，以及那些在某个瞬间悄然发生的改变，共同构成了《冰菓》的魅力。</p>
+<p>在我看来，《冰菓》真正想讲述的，不只是四个人如何解开一个又一个谜题，而是他们如何在理解他人的过程中逐渐认识自己，如何在平凡的日子里发现原本没有注意到的东西。</p>
+<h2 id="一-日常推理的魅力：小事背后藏着人的生活">一、日常推理的魅力：小事背后藏着人的生活</h2>
+<blockquote>
+<p>「わたし、気になります！」（“我很好奇！”）</p>
+<p>——千反田爱瑠</p>
+</blockquote>
+<p>千反田说，即使十年后可能不再在意，她仍想认真对待现在的感受。</p>
+<p><img width="1290" height="1460" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/hyouka/chitanda-present.webp" alt="千反田谈当下的感受"></p>
+<p>千反田所表达的并不是某种宏大的理想，而是一种对当下的珍视。人总习惯用未来的眼光审视现在：觉得某些事情终究会过去，某些情绪迟早会淡去，某些此刻无比重要的东西，也许多年以后便不再值得一提。但千反田不愿意因此否定现在的感受。即使未来的自己可能改变想法，她仍然愿意认真对待此刻。</p>
+<p>这种对当下的珍视，也构成了《冰菓》的叙事底色。</p>
+<p>《冰菓》属于「日常之谜」类型。它不依赖凶杀案或巨大阴谋，而是从普通生活中寻找值得追问的异常。它所讲述的往往只是一些微不足道的小事，但正是这些看似不起眼的细节，构成了古典部四人真实而具体的校园生活。</p>
+<p>例如，图书馆篇中，古典部成员注意到一本书总是被借走，却又在很短的时间内归还。这个看似普通的借阅记录引起了千反田的注意，折木通过调查发现，借书行为与美术社团的绘画活动有关。一条不起眼的借阅记录背后，也隐藏着校园里某个社团真实的日常。</p>
+<p>折木注意到大木老师看到窗外直升机时露出的笑容，并尝试从这个细节推测他的心理活动。一个短暂的表情，一次不经意的观察，便成为理解人物行为动机的入口。推理的重点不再只是找到某个物品或事件的答案，而是理解一个人为什么会在那个瞬间露出那样的表情。</p>
+<p>这些故事没有宏大的背景，也没有复杂的犯罪手法。它们只是从一个细节出发，尝试理解一件事情为什么发生，以及一个人为什么会有这样的反应。</p>
+<p>关谷纯与《冰菓》的谜题，进一步放大了这种日常推理的意义。最初只是千反田对童年记忆的一点疑惑，后来却牵引出四十五年前的学生运动、一位被时代改变命运的少年，以及一段尘封多年的校园历史。一个属于个人记忆的小小疑问，最终连接起了一个时代的悲欢。</p>
+<p>从一本书的借阅记录，到一个人的表情，再到一段跨越数十年的历史，《冰菓》始终在做同一件事情：<strong>认真对待那些容易被忽略的细节，并从中寻找隐藏着的人与故事。</strong></p>
+<p>或许十年后的他们，真的不会再记得高中时曾经解开过什么谜题，也不会记得某个普通下午发生过什么。但这并不意味着那些时刻没有意义。对于当时的人而言，那些好奇、困惑、喜悦与遗憾，都是真实发生过的青春。</p>
+<p><strong>生活的意义并不总在遥远的未来，也在那些我们愿意认真对待的当下。</strong></p>
+<h2 id="二-冰菓-与关谷纯：一声迟到了四十五年的呐喊">二、《冰菓》与关谷纯：一声迟到了四十五年的呐喊</h2>
+<h3 id="2-1-标题背后的双关：从-氷菓-到-i-scream">2.1 标题背后的双关：从「氷菓」到「I scream」</h3>
+<p><img width="1036" height="1370" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/hyouka/anthology.webp" alt="关谷纯与文集一节的配图"></p>
+<p>「氷菓」这个名字，是整部作品中最精妙的文字游戏之一。它表面上只是古典部文集的名称，背后却隐藏着关谷纯留给后世的一声呐喊。</p>
+<p>要理解这个名字，首先需要了解神山高中的另一个特殊称呼——「カンヤ祭」。</p>
+<p>神山高中的文化祭一直被学生们称为「カンヤ祭」，而这个名字实际上与关谷纯有着密切的关系。「カンヤ」可以写作「関谷」，也就是关谷纯的姓氏。「関」取音读「カン」，「谷」取训读「ヤ」，组合起来便是「カンヤ」。因此，文化祭的名称实际上与关谷纯联系在一起。</p>
+<p>动画设定中的四十五年前，神山高中曾经爆发过一场学生运动。当时，学校方面决定缩减原本为期五天的文化祭，学生们对此强烈不满，最终发起抗议。关谷纯原本并不是运动的实际组织者，却因为其他学生不愿承担领袖的责任，被推举为名义上的代表。运动最终迫使学校保留了文化祭，但期间发生的道场火灾让事件发生转折。最终，关谷纯被学校退学。</p>
+<p>多年以后，学生们依然享受着文化祭延续下来的传统，却逐渐忘记了关谷纯真正经历过什么。「カンヤ祭」看似是一种纪念，实际上却将他塑造成了一个主动为学生牺牲的英雄。而关谷纯本人，并没有真正选择过这样的命运。</p>
+<p>相比之下，古典部文集「氷菓」所隐藏的，才是关谷纯真正想留下的声音。</p>
+<p>「氷菓」在日语中读作「ひょうか」（Hyōka），指冰制甜品。折木将它按照词义联系到英语中的「Ice Cream」（冰淇淋），而真正的谜底就藏在这个英文词汇之中。</p>
+<p>「Ice Cream」与「I scream」在英语中发音几乎相同。前者意为冰淇淋，后者则是「我在尖叫」。通过重新划分单词，原本看似普通的「氷菓」，便有了完全不同的含义：</p>
+<p><strong>氷菓（Hyōka）→ Ice Cream → I scream（我在尖叫）。</strong></p>
+<p>至此，关谷纯留下这个名字的真正意图终于浮现出来。</p>
+<p>他并不是在庆祝自己成为英雄，而是在用这样一个隐晦的文字游戏，表达自己被迫承担一切时的痛苦。他无法改变已经发生的事情，也无法直接向后来的人讲述自己的遭遇，于是将这份无法言说的情绪藏进了文集的标题里。</p>
+<p>关谷纯曾经对年幼的千反田说过一段关于悲鸣的话：一个人必须变得坚强，因为软弱到一定程度，有一天即使想要发出悲鸣，也可能连悲鸣都无法发出。小时候的千反田无法理解这句话，只记得自己当时的恐惧与哭泣。当折木解开「氷菓」的谜题，她才终于想起叔叔当年说过的话，也理解了那份沉重的情绪。</p>
+<p><strong>那本被遗忘多年的文集，从一开始就不只是一份普通的社团作品，而是一个被时代改变命运的人，留给后来者的一声呐喊。</strong></p>
+<p>而折木所做的，也不仅仅是解开一个文字谜题。他让一声沉寂了四十五年的悲鸣，终于被后来的人听见。</p>
+<h3 id="2-2-集体的荣誉与个人的代价">2.2 集体的荣誉与个人的代价</h3>
+<p>关谷纯的故事最令人难过的地方，在于集体行动与个人命运之间的不对称。</p>
+<p>学生们曾经为了文化祭而行动，最后留下了文化祭延续的结果。多年以后，学校仍然举办文化祭，学生们仍然享受着这项传统。但对于关谷纯来说，那场运动却成为人生的转折点。</p>
+<p>集体能够共同享有成果，代价却可能落在某一个具体的人身上。</p>
+<p>关谷纯被记住为运动的代表，却没有真正得到与这个身份相称的支持。他成为一个方便被讲述的名字，而他的个人经历、委屈与失落逐渐从集体记忆中淡去。</p>
+<p>文集封面上的兔子与狼，也让这段历史具有了更直观的象征意味。狼与兔子的关系呈现出力量的不对等；兔子群体的存在，则让人想到那些参与事件、见证事件，却最终各自回到生活中的人。</p>
+<p>这段往事最深的悲哀，不只是一个人被学校处分，而是一个集体在时间流逝之后，仍然保留着事件的成果，却逐渐忘记了那个为此付出代价的人。</p>
+<h3 id="2-3-从校园历史走向日本战后社会">2.3 从校园历史走向日本战后社会</h3>
+<p>动画把关谷纯的往事放在20世纪60年代。回看当时的日本社会，有助于理解作品如何呈现这场校园运动。</p>
+<p>20世纪60年代的日本正处于战后经济高速增长时期。工业化、城市化和基础设施建设迅速推进，1964年东京奥运会与东海道新干线的开通，成为日本现代化进程的重要象征。战后日本逐渐摆脱物资匮乏，进入大众消费社会。表面上，这是一个充满发展与希望的时代；但经济增长并没有消除社会矛盾，反而带来了新的问题：城市人口集中、城乡差距、劳动环境、环境污染，以及教育制度与社会结构的快速变化。</p>
+<p>大学扩张是这一时期的重要现象。越来越多的年轻人进入大学，大学不再只是少数精英的教育场所，而逐渐成为大规模青年群体聚集的空间。然而，大学管理制度、学费、学生自治和教育质量等问题，也随之成为校园内部的矛盾来源。学生开始追问：大学究竟应该是什么样的地方？学生是否有权参与决定自己的校园生活？学校管理者是否能够单方面决定教育与校园秩序？</p>
+<p>与此同时，1960年的安保斗争给日本青年留下了深刻影响。围绕《日美安全保障条约》修订，日本学生、工会、知识分子与市民团体曾经展开大规模抗议。虽然新安保条约最终生效，但这场运动改变了战后日本的政治文化，也使学生运动内部逐渐出现路线分歧与组织分裂。<a href="#ref-3">〔3〕</a> <a href="#ref-10">〔10〕</a></p>
+<p>到了1960年代后期，学生运动的议题进一步扩展。除了反对安保体制和越南战争，大学内部的学费、自治、教学制度与管理权力也成为抗议焦点。1967年10月8日，反对越南战争的学生在羽田机场附近组织抗议，冲突中京都大学学生山崎博昭死亡。这一事件成为日本1960年代后期学生运动的重要节点。<a href="#ref-3">〔3〕</a> <a href="#ref-4">〔4〕</a></p>
+<p>因此，1967年的日本并不是一个只有经济繁荣与社会安定的国家。它同时存在着现代化带来的社会变化、大学内部的制度矛盾、战后政治遗留问题，以及越南战争引发的反战情绪。年轻人正在重新思考自己与学校、国家和社会之间的关系。</p>
+<p>在这样的时代背景下，再回头看《冰菓》中的「斗争」，便会发现它并不只是一次关于文化祭天数的校园纠纷。文化祭对于学生而言，不只是娱乐活动，也承载着学生自治、集体生活与表达自我的空间。学校决定缩减文化祭，触及的正是学生对校园生活的参与权与自主性。</p>
+<p>关谷纯的悲剧，则让这场冲突有了具体的个人面貌。他原本只是一个普通学生，却因为其他人不愿承担风险而被推到了运动的前台。学生们需要一个代表，需要一个能够与学校交涉的人，于是关谷纯成为了这个角色。但当运动发生意外、学校需要追究责任时，曾经共同参与的人逐渐退回各自的位置，关谷纯最终成为那个承担后果的人。</p>
+<p>当一群人为了共同理想而行动时，为什么最后承担代价的却可能只有其中一个人？</p>
+<p>这也是《冰菓》没有将学生运动写成一段单纯的青春热血故事的原因。它让我们看到，理想主义可以让年轻人走到一起，但集体内部同样存在利益、恐惧、妥协与责任分配。一个群体可以因为共同目标而团结，也可能在面对真正的代价时分散。</p>
+<p>这让作品中的校园历史带有一种介于现实与虚构之间的质感：它并非对某场真实学生运动的简单复刻，却借助真实时代的社会氛围，使关谷纯的命运拥有了<strong>超越校园故事的重量</strong>。</p>
+<h3 id="2-4-历史记忆：谁有资格讲述过去？">2.4 历史记忆：谁有资格讲述过去？</h3>
+<p>社会学家莫里斯·哈布瓦赫在《论集体记忆》中讨论了社会群体与个人记忆之间的关系，指出人们往往借助群体框架来理解和重建过去。<a href="#ref-5">〔5〕</a></p>
+<p>《冰菓》中的关谷纯正体现了这种记忆的差异。</p>
+<p>学校记住的是文化祭传统的延续；参与者记住的是当年的热情与冲突；关谷纯承受的是被推到前台、被处分以及离开原有生活的后果；多年后的千反田，则从家庭记忆中继承了一段没有被解释清楚的往事。</p>
+<p>同一段历史，在不同人的记忆中拥有不同面貌。</p>
+<p>折木的调查让这段往事重新变得完整。推理在这里不只是找出真相，更像是一种迟来的倾听：一个早已离开校园的人，终于再次成为故事中有具体感受、有个人命运的人。</p>
+<h2 id="三-折木奉太郎：灰色人生观与逐渐打开的可能性">三、折木奉太郎：灰色人生观与逐渐打开的可能性</h2>
+<h3 id="3-1-节能主义：不愿意浪费自己的青春">3.1 节能主义：不愿意浪费自己的青春</h3>
+<blockquote>
+<p>「やらなくてもいいことなら、やらない。やらなければいけないことなら手短に。」</p>
+</blockquote>
+<p>———折木奉太郎</p>
+<p><img width="960" height="540" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/hyouka/oreki.webp" alt="折木奉太郎一节的配图"></p>
+<p>不做不必要的事，必要的事情尽快解决。</p>
+<p>这是折木奉太郎最具代表性的生活信条。他将这种态度称为节能主义。</p>
+<p>折木并不是没有能力。相反，他拥有敏锐的观察力、很强的逻辑能力和出色的信息整合能力。他能够从细节中发现别人忽略的线索，也能够在复杂信息中迅速建立联系。只是，他并不愿意主动把这些能力投入到自己认为没有必要的事情中。</p>
+<p>节能主义既是他的生活方式，也是他保护自己的方式。</p>
+<p>不主动参与，就不必承担额外责任；不表现得过于积极，就不必回应别人不断增加的期待；不轻易投入感情，就可以减少失望的可能。</p>
+<p>折木似乎很早就为自己安排好了一种生活：安静、低消耗、不引人注目，也不主动追求所谓精彩的青春。</p>
+<h3 id="3-2-灰色与玫瑰色：两种青春观">3.2 灰色与玫瑰色：两种青春观</h3>
+<p><img width="960" height="540" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/hyouka/rose-colored-life.webp" alt="灰色与玫瑰色青春一节的配图"></p>
+<p>《冰菓》用&quot;灰色&quot;和&quot;玫瑰色&quot;描绘不同的青春状态。</p>
+<p>折木所向往的灰色，意味着克制、安静、稳定和低欲望；千反田所代表的玫瑰色，则意味着好奇、热情、参与和对未知的期待。</p>
+<p>但这两种颜色并不是简单的好坏之分。灰色有它的舒适与自由，玫瑰色也伴随着责任、失望和不确定。折木真正需要面对的问题，并不是自己是否应该变成一个热血的人，而是他是否愿意承认：生活中确实存在值得自己主动靠近的人和事。</p>
+<p>千反田的出现，让折木一次次走出原本设定好的范围。她并没有强迫他改变性格，只是不断把新的问题带到他面前。折木起初只是被动回应，后来却逐渐开始主动关心事情的结果，也开始在意千反田的感受。</p>
+<p>他的成长并不是从灰色变成玫瑰色，而是在灰色生活中，慢慢出现了新的颜色。</p>
+<h3 id="3-3-与泡沫经济后日本青年心理的联系">3.3 与泡沫经济后日本青年心理的联系</h3>
+<p>日本泡沫经济在1990年前后破裂，随后长期经济低迷、劳动市场变化和非正规就业扩张，对年轻人的就业与生活预期产生了持续影响。相关研究讨论了经济泡沫破裂后青年稳定就业机会减少，以及日本就业政策对青年不稳定就业的回应。<a href="#ref-6">〔6〕</a></p>
+<p>从这一社会背景出发，折木的节能主义可以被理解为一种具有时代共鸣的生活姿态：当未来不确定、努力与回报之间的关系变得复杂时，人们可能更倾向于控制投入、降低期待，以维持生活的稳定。</p>
+<p>折木并不是某一代日本青年的简单缩影，但他的生活哲学确实触及了现代青年熟悉的心理：不想被过度消耗，也不愿轻易把希望交给一个不确定的未来。</p>
+<h3 id="3-4-入须冬实：被认可的能力与被利用的自尊">3.4 入须冬实：被认可的能力与被利用的自尊</h3>
+<p><a target="_blank" rel="noopener noreferrer" href="https://www.kyotoanimation.co.jp/kotenbu/character/">入须冬实：京都动画官方角色介绍</a></p>
+<p>《愚者的片尾》中，入须冬实通过肯定折木的推理能力，让他愿意承担电影谜题的解决工作。折木后来发现，自己被对方对能力和自尊的判断所推动。</p>
+<p>这段经历让折木第一次清楚地感受到：被人认可并不总意味着被人理解。赞美有时也可以成为一种手段，让人主动承担原本不想承担的事情。</p>
+<p>与入须冬实不同，千反田对折木的信任更接近一种<strong>真诚的依赖</strong>。她希望折木帮助自己理解问题，也愿意分享自己的疑问、记忆和生活。她让折木感受到，自己的能力不仅可以被利用，也可以成为与别人建立联系的方式。</p>
+<p>折木逐渐开始明白，参与一件事情并不只是消耗精力。有些投入能够让生活变得更加丰富，也能够让人与人之间产生真正的联系。</p>
+<h2 id="四-千反田爱瑠：好奇心-故乡与无法回避的责任">四、千反田爱瑠：好奇心、故乡与无法回避的责任</h2>
+<h3 id="4-1-好奇心是她理解世界的方式">4.1 好奇心是她理解世界的方式</h3>
+<blockquote>
+<p>「わたし、気になります！」</p>
+</blockquote>
+<p>千反田的&quot;我很好奇&quot;是《冰菓》中最鲜明的表达之一。</p>
+<p>她对周围事物始终保持兴趣，不满足于表面答案，也愿意为一个问题投入时间。她的好奇心推动了故事，也改变了折木的生活。</p>
+<p>折木习惯于减少与世界的联系，千反田则不断邀请他进入世界。她让折木发现，原本看似没有意义的日常，也可能藏着值得理解的事情。</p>
+<p>而折木的推理能力，又让千反田的好奇心得到回应。两个人的关系因此不只是性格互补，更是两种理解世界的方式相遇。</p>
+<h3 id="4-2-千反田爱瑠：大小姐的身份-故乡与无法回避的责任">4.2 千反田爱瑠：大小姐的身份、故乡与无法回避的责任</h3>
+<p><img width="1440" height="725" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/hyouka/hometown.webp" alt="千反田与故乡一节的配图"></p>
+<p>如果说「我很好奇」是千反田爱瑠最鲜明的性格标签，那么她的家族身份与故乡，则是理解这个人物时更容易被忽略的一面。</p>
+<p>千反田并不是一个普通的乡村女孩。她出身于神山市颇有影响力的传统农家千反田家，是家族中需要承担重要责任的女儿。她平时的举止、谈吐和待人方式，都带着一种良好的教养与克制。无论是在学校与同学相处，还是回到家中面对长辈，她似乎总能表现得得体而从容。</p>
+<p>但这种从容并不意味着她的生活没有束缚。</p>
+<p>在古典部里，千反田可以只是一个对各种事情充满好奇的高中女生，可以因为一个小小的疑问而兴奋，也可以毫无顾忌地拉着折木去调查自己感兴趣的事情。然而，离开校园，回到自己的家庭与故乡，她所面对的就不再只是个人的兴趣。作为千反田家的女儿，她与当地的土地、家族关系以及传统生活有着密切联系。她需要参与家族和地方的活动，也逐渐意识到，自己的未来并不完全由个人兴趣决定。</p>
+<p>动画第20集至第22集对这一点有着非常细致的表现。</p>
+<p>例如，在新年拜访当地重要人物的过程中，千反田表现得十分熟练。她知道应该如何称呼长辈，如何表达礼节，也清楚自己在这些场合中应该承担什么角色。这些行为看似只是一个出身良好的女孩所具备的教养，但结合她的家庭背景来看，它们实际上也是一种长期生活在传统家族秩序中的体现。</p>
+<p>到了最后一集《绕远路的雏偶》，这种身份与责任的关系表现得更加明显。</p>
+<p>在雏祭活动中，千反田并不只是一个参与祭典的普通女孩，而是整个仪式中具有重要身份的人物。她需要按照当地传统完成自己的职责，与其他参与者配合，并在出现突发状况时承担相应责任。折木虽然陪伴在她身边，却逐渐发现，自己所熟悉的那个总是充满好奇心、偶尔显得有些孩子气的千反田，在这里展现出了完全不同的一面。</p>
+<p>尤其是她隔着帘幕与折木交谈的场景。帘幕将两个人隔开，也在视觉上呈现出千反田私人身份与公共身份之间的距离。折木平时所接触的，是那个能够自由表达好奇心的千反田；而此刻，他所面对的，却是一个必须按照家族和传统要求行事的千反田。她依然是同一个人，但她所处的位置已经发生了变化。</p>
+<p>当仪式中出现问题时，千反田能够迅速作出判断，并承担起自己应该承担的责任。她没有表现出慌乱，也没有把事情推给别人。这种从容并不是突然产生的，而是她长期以来对自己身份与责任的认识。</p>
+<p>我认为，这也是千反田这个角色最值得深入分析的地方：她有自己的想法，而是从很早开始，就生活在一个需要考虑家族、土地和他人的环境之中。她的懂事、礼貌与责任感，既是她性格的一部分，也是她成长环境留下的痕迹。</p>
+<p>但《冰菓》并没有把千反田塑造成一个完全顺从传统的继承者。恰恰相反，她内心同样有着自己的愿望。</p>
+<p>在最后一集，千反田向折木谈到了自己的未来。她考虑过两种改善家乡农业的方向：一种是种植商品价值更高的作物，让大家共同变得富裕；另一种是运用经营战略提高生产效率，避免大家一同陷入贫困。最终，她选择了前者，并因此选择理科方向。这个决定很能说明她的性格。她想为家乡寻找新的可能。</p>
+<p>这也让千反田的好奇心有了更深一层的意义。</p>
+<p>她对世界的好奇，并不只是为了满足个人兴趣。她希望了解事物的运行方式，希望知道问题为什么发生，也希望找到能够改变现状的方法。在校园里，这种好奇心表现为对谜题的追问；面对故乡时，它则转化为对农业、经营方式和地方未来的思考。她选择高附加值作物的方向，也说明她并不只是想用效率维持现状，而是希望创造新的价值，让家乡的人能够过得更好。</p>
+<p>这里其实存在着一种很有意思的矛盾。</p>
+<p>千反田拥有一个传统家族继承者的身份，这个身份在一定程度上限制了她对未来的选择；但与此同时，她也并没有完全排斥这份责任。她既希望拥有自己的生活，也希望能够延续家族与故乡的传统。她并不是简单地想要逃离乡村，也不是毫无保留地接受传统，而是在两者之间寻找一种能够让自己接受的生活方式。</p>
+<p>千反田并没有用美化的语言掩盖家乡正在面对的问题。她知道这里缺少年轻人的活力，也知道地方发展存在局限。她对故乡的感情并不是建立在一种理想化的乡村想象之上，而是在了解它的不足之后，依然愿意与它保持联系。</p>
+<h3 id="4-3-神山市与真实高山市">4.3 神山市与真实高山市</h3>
+<p>从地方依恋的视角看，对故乡的感情既关乎地方本身，也关乎在那里形成的关系和经历。<a href="#ref-7">〔7〕</a></p>
+<p>《冰菓》的舞台神山市以岐阜县高山市为现实参照。高山市于2005年2月1日与周边九个町村合并，形成面积约2177.61平方公里的新高山市。<a href="#ref-8">〔8〕</a></p>
+<p>高山市官方人口资料显示，当地人口在2000年达到97,023人的峰值，此后持续下降；官方人口愿景预计，人口将继续减少。<a href="#ref-9">〔9〕</a></p>
+<p>这些现实变化与千反田对故乡的描述形成了呼应：地方拥有悠久的历史与文化，却也面对人口减少、年轻人外流和社区活力变化等问题。</p>
+<p>因此，千反田介绍故乡的场景不仅是一段温柔的情感表达，也让作品从校园生活延伸到地方社会。折木看到的，不再只是千反田在学校里的样子，而是她成长的土地、家庭所处的环境，以及她未来可能承担的生活。</p>
+<h2 id="五-折木与千反田：从好奇到理解-从相遇到相互影响">五、折木与千反田：从好奇到理解，从相遇到相互影响</h2>
+<p>《冰菓》的感情线并不依靠直白的告白推进。折木与千反田之间的关系，更多藏在一次次对话、一次次并肩调查，以及那些没有被明确说出口的情绪里。</p>
+<h3 id="5-1-折木与千反田：两个人如何改变彼此">5.1 折木与千反田：两个人如何改变彼此</h3>
+<p>故事最初，折木对高中生活的期待十分简单：不主动惹事，不浪费精力，尽可能按照自己的节奏生活。他习惯于将生活中不必要的事情排除在外，对周围的世界也缺乏主动探索的欲望。而千反田恰恰是与他截然不同的人。「わたし、気になります！」几乎成为她面对世界的本能反应。她对周围的一切充满好奇，愿意为了一个看似微不足道的问题花费时间，也总是希望能够弄清楚事情背后的原因。</p>
+<p>两个人最初的相遇，似乎只是一个不断提出问题，另一个负责寻找答案。但随着故事推进，他们之间的关系逐渐发生了变化。</p>
+<p>千反田让折木看到了自己原本忽略的世界。对于习惯节能主义的折木而言，很多事情都没有主动参与的必要，但千反田却让他意识到，生活中有许多事情即使没有明确的目的，也值得认真对待。他开始愿意投入时间，主动观察周围的事物，也逐渐对自己原本漠不关心的人和事产生兴趣。折木并没有因此彻底改变自己的性格，但他的生活确实因为千反田而变得更加丰富。</p>
+<p>而折木对千反田的影响，同样不只是替她解开一个又一个谜题。千反田拥有旺盛的好奇心，却并不意味着她总能独自理解自己所面对的一切。尤其是涉及家庭、叔叔和故乡时，她的疑问往往与自身的记忆和情感联系在一起。折木愿意认真倾听她的想法，也愿意通过自己的观察和推理，帮助她理解那些难以厘清的事情。对千反田而言，折木不仅是一个能够给出答案的人，也是一个能够理解她为什么在意这些事情的人。</p>
+<p>他们在相处中逐渐拓宽了彼此的世界。折木开始愿意主动走近自己原本不关心的事物，千反田也逐渐拥有了一个能够分享自己的疑问、记忆与情感的人。</p>
+<h3 id="5-2-绕远路的雏偶-：最含蓄的告白">5.2 《绕远路的雏偶》：最含蓄的告白</h3>
+<p><img width="1034" height="1458" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/hyouka/finale.webp" alt="《绕远路的雏偶》配图"></p>
+<p>动画最后一集《绕远路的雏偶》，将折木与千反田的关系带到了一个新的层次。</p>
+<p>折木陪千反田参加故乡的雏祭活动，第一次如此深入地接触她的家庭、家乡与生活。对折木来说，千反田不再只是古典部里那个总是充满好奇心、不断提出问题的女孩。她有自己的家族、故乡和未来，也有许多校园生活无法完全呈现的现实。</p>
+<p>在这一集中，千反田向折木介绍了自己的故乡。她先让折木看眼前的土地，然后谈到这里的现实：</p>
+<p>千反田请折木看看她的故乡。她坦言这里有自己的局限，但依然想把它介绍给折木。<a href="#ref-12">〔12〕</a>&gt;</p>
+<blockquote>
+<p>我并不觉得这里是最美的地方，也不觉得这里充满了可能性……</p>
+<p>但是……我想向折木同学介绍这里。」</p>
+</blockquote>
+<p>她接着告诉折木：「无论走哪条路，我最终都会回到这里。我的终点就在这里。」她并不讨厌，也不悲伤于这样的未来。作为千反田家的女儿，她希望承担与自己身份相称的责任。</p>
+<p>她还解释了自己考虑过的两种农业发展方向：一种是生产商品价值更高的作物，让大家共同变得富裕；另一种是通过经营战略提高生产效率，让大家不至于一同陷入贫困。她倾向于前一种。<a href="#ref-12">〔12〕</a> 这段对话让折木看到，千反田并非只是被家族传统推着走。她已经认真思考过自己能够为故乡做什么，也在为自己的未来作出选择。</p>
+<p>这句话对于折木而言，有着不同寻常的意义。</p>
+<p>一直以来，他奉行节能主义，尽可能避免不必要的事情，也很少主动规划自己的未来。但在这里，他却开始设想自己能够承担什么，能够为千反田做些什么，甚至想象两个人如何在未来共同经营一份事业。</p>
+<p>他没有直接说出喜欢，也没有明确承诺自己会陪伴千反田走下去。但他已经开始把自己的能力、未来与千反田的人生联系起来。</p>
+<p>这或许是折木感情变化最明显的一次表现。对于一个过去总想着如何减少自身消耗的人而言，愿意主动承担另一个人未来的一部分，本身就意味着一种改变。</p>
+<p>然而，这些话最终还是停留在了折木的想象之中。他没有真正说出口，两个人也依然沿着原来的道路向前走。</p>
+<p>就在这时，折木说了一句：</p>
+<blockquote>
+<p>「开始冷起来了呢。」</p>
+</blockquote>
+<p>千反田回答：</p>
+<blockquote>
+<p>「不，已经入春了。」</p>
+</blockquote>
+<p>这是整部动画最令人难忘的结尾。</p>
+<p>折木感受到的是逐渐袭来的寒意，而千反田却告诉他，春天已经到来了。两个人对于同一个时刻，似乎有着不同的感受。</p>
+<p>从季节的角度来看，春天意味着新的开始。而放在两个人的关系中，这句话也有了更加丰富的意味。折木依然没有真正说出自己的心意，但他的内心已经发生了变化。他开始想象与千反田共同面对未来的可能，而千反田也将自己最真实的生活展现在了他的面前。</p>
+<p>这不是一句直白的告白，却有着非常含蓄的情感表达。它没有明确回答折木心中那些尚未说出口的话，却让故事停留在了一个充满希望的瞬间。</p>
+<p>回看整部作品，故事始于千反田的不断向折木提出问题，让他开始关注原本忽略的世界。而到了最后，折木已经不再只是那个被动回应她好奇心的人。他开始主动思考千反田的未来，甚至想象自己能够成为她未来生活的一部分。</p>
+<p>从最初的相遇，到逐渐理解彼此，再到最后对共同未来的想象，两个人的关系已经发生了非常明显的变化。</p>
+<p><strong>故事结束了，但对于折木和千反田而言，或许真正的生活，才刚刚开始。</strong></p>
+<p>我很喜欢这样的留白。它没有替人物决定未来，结束的恰到好处。</p>
+<h2 id="六-福部里志与伊原摩耶花：青春中的自尊与不甘">六、福部里志与伊原摩耶花：青春中的自尊与不甘</h2>
+<p>如果说折木与千反田代表了青春中相互理解、彼此改变的一面，那么福部里志与伊原摩耶花则展现了青春中更加复杂、甚至有些令人无奈的一面。</p>
+<p>四个人中，里志看起来是最容易相处的一个。他开朗、健谈，擅长活跃气氛，对各种知识都十分熟悉；摩耶花则性格直接，有自己的审美标准和坚持，尤其对漫画有着相当认真的态度。但如果仔细观察，就会发现这两个人的内心都远没有表面上那么轻松。</p>
+<p>里志始终无法坦然面对自己与折木之间的差距，而摩耶花则一直在等待里志对自己感情的回应。他们一个在友情与竞争中寻找自我价值，一个在喜欢与失望之间坚持自己的感情。相比折木与千反田关系中的相互吸引，里志与摩耶花的关系更多呈现出青春中难以解决的矛盾。</p>
+<p><img width="1280" height="647" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/hyouka/satoshi-mayaka.webp" alt="福部里志与伊原摩耶花一节的配图"></p>
+<h3 id="6-1-福部里志：数据库无法得出的结论">6.1 福部里志：数据库无法得出的结论</h3>
+<p>福部里志是一个很容易被低估的角色。</p>
+<p>他总是表现得开朗、健谈，似乎对任何事情都能轻松应对。他知识丰富，擅长收集信息，也经常用「数据库」来定义自己。但这个称呼实际上隐藏着他对自身能力的一种认识：他能够掌握大量信息，却未必能够像折木一样，从这些信息中推导出真正的结论。</p>
+<p>里志与折木之间的关系远比普通朋友复杂。他欣赏折木的才能，却也始终无法坦然接受两人之间的差距。他知道折木拥有自己所缺少的推理天赋，也清楚自己即使掌握再多知识，也未必能够达到折木的水平。</p>
+<p>这种差距逐渐转化为一种竞争心理。他希望自己能够被认可，希望能够证明自己的价值，却又不愿意直接承认自己对折木的嫉妒。于是，他选择用玩笑和轻松的态度掩饰内心的不甘。</p>
+<p>「数据库无法得出结论」这句话，实际上也像是里志对自己的某种定义。他似乎接受了自己的能力边界，却又始终不甘心停留在这个位置。</p>
+<p>文化祭篇中的「十文字事件」，将这种心理表现得尤为明显。里志试图抢在折木之前抓住「十文字」，却没能如愿。这场较量是里志给自己出的题。<a href="#ref-11">〔11〕</a></p>
+<p>对于里志而言，折木不仅是一个值得信赖的朋友，也是一个始终让他感到压力的参照对象。他可以在平时与折木开玩笑，可以欣赏折木的推理能力，但当两个人真正站在竞争的位置上时，他内心积累已久的不甘便会显现出来。</p>
+<p>一个人能否真心欣赏朋友的优秀，同时又因为朋友的优秀而感到痛苦？</p>
+<p>我认为里志正是这种矛盾的体现。他并不是不希望折木优秀，而是不希望自己永远只能作为折木身边那个提供信息的人。他也希望自己能够拥有某种不可替代的能力，希望有一天能够凭借自己的力量取得胜利。</p>
+<p>这种心理其实非常真实。我们经常会遇到比自己优秀的朋友。我们一方面希望他们能够继续优秀，另一方面又难免在比较中感到失落。尤其当对方拥有自己渴望却无法获得的天赋时，这种情绪就更加复杂。</p>
+<p>而他真正需要面对的，或许并不是如何超过折木，而是如何接受自己不必成为另一个折木。</p>
+<h3 id="6-2-伊原摩耶花：认真-坚持-以及得不到回应的感情">6.2 伊原摩耶花：认真、坚持，以及得不到回应的感情</h3>
+<p>与里志相比，摩耶花是一个更加直接的人。</p>
+<p>她对自己喜欢的事情有明确的判断，也愿意为此投入时间和精力。尤其是在漫画方面，她拥有自己的审美标准，对作品的质量、创作态度以及行业中的一些问题都有相当认真的思考。</p>
+<p>在漫画研究会中，摩耶花与其他成员之间的冲突，也体现了她性格中非常重要的一面。她并不是一个只会围绕感情生活的女孩。她有自己的兴趣、原则和判断，也愿意为了自己认为正确的事情与别人发生争论。</p>
+<p>这一点其实很值得注意。</p>
+<p>在许多校园恋爱作品中，女性角色往往容易被塑造成围绕男主角展开的形象。但摩耶花并不是这样的人。她有自己的生活，也有自己想要坚持的东西。她对里志的感情固然重要，却并没有完全取代她对漫画和个人价值的追求。</p>
+<p>而她与里志之间的关系，恰恰是她生活中最难以获得明确答案的一部分。</p>
+<p>摩耶花喜欢里志已经不是一天两天的事情。两人从小相识，她对里志的感情也一直十分明确。但里志始终没有给她一个真正确定的回应。他并不是完全不知道摩耶花的心意，却总是在关系即将向前发展时选择退缩。</p>
+<p>这让两个人之间形成了一种微妙的不平衡：摩耶花愿意承认自己的感情，也愿意为这份感情付出；里志却始终无法真正接受这份感情。</p>
+<p>我认为，里志的问题并不只是所谓的迟钝。他其实非常清楚摩耶花对自己的感情，也清楚她一直在等待自己的回应。真正让他犹豫的，是他对自己的认识，以及他对亲密关系的态度。</p>
+<p>他习惯于把自己放在一个不会轻易受伤的位置。他可以与摩耶花保持亲近，可以享受两个人相处的日常，却不愿意真正承担恋爱关系所意味着的责任。因为一旦接受这份感情，他就必须认真面对自己是否能够给予对方同样的回应。</p>
+<p>而这也与他对折木的竞争心理形成了某种呼应。里志始终在意自己是否足够优秀，是否拥有值得被认可的价值。当一个人连自己都无法完全认可时，他也可能很难坦然接受另一个人毫无保留的喜欢。</p>
+<h2 id="七-青春的美丽与遗憾：为什么-冰菓-令人回味">七、青春的美丽与遗憾：为什么《冰菓》令人回味</h2>
+<p>《冰菓》没有把青春描绘成毫无阴影的黄金时代。</p>
+<p>关谷纯的青春被时代和集体行动改变；折木曾经主动缩小自己的生活；千反田热爱故乡，却也要面对家族和地方责任；里志与摩耶花则在感情与自我认同中经历不甘和犹豫。</p>
+<p>他们的青春并不完美，却因此显得真实。</p>
+<p>青春让人怀念的地方，未必是它拥有多少快乐，而是它曾经充满尚未发生的可能。我们不知道未来会遇见谁，不知道自己会成为怎样的人，也不知道某一次普通的相遇，是否会成为多年以后重要的记忆。</p>
+<p>《冰菓》把这种感觉表现得很细腻。它让我们看到，过去的人也曾经年轻，也曾经拥有理想，也曾经做出选择；现在的人同样会迷茫、犹豫，也会在不知不觉中改变；而未来仍然没有被完全写定。</p>
+<p>或许多年以后，我们也会忘记古典部曾经解开过哪些谜题，忘记文化祭里发生过什么，也未必还能清楚记得每一次社团活动的细节。但我想，我们大概仍然会记得千反田的好奇，记得折木逐渐改变的目光，记得四个人坐在活动室里度过的那些普通下午。</p>
+<p>而当故事的最后，千反田告诉折木「不，已经入春了」时，我想，这或许也是作品留给观众最好的答案。</p>
+<h2 id="参考文献">参考文献</h2>
+<p><a id="ref-1"></a> 1. 米泽穗信：《冰菓》，角川书店，2001 年。<a target="_blank" rel="noopener noreferrer" href="https://www.kadokawa.co.jp/product/200108000110/">KADOKAWA 书目</a>。</p>
+<p><a id="ref-2"></a> 2. 京都动画：<a target="_blank" rel="noopener noreferrer" href="https://www.kyotoanimation.co.jp/kotenbu/">电视动画《冰菓》官方网站</a>。</p>
+<p><a id="ref-3"></a> 3. Nick Kapur. <a target="_blank" rel="noopener noreferrer" href="https://apjjf.org/2022/14/kapur">The Japanese Student Movement in the Cold War Crucible, 1945–1972</a>. <em>The Asia-Pacific Journal: Japan Focus</em>, 20(14), 2022.</p>
+<p><a id="ref-4"></a> 4. Eiji Oguma. <a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1017/S1557466015017441">Japan’s 1968: A Collective Reaction to Rapid Economic Growth in an Age of Turmoil</a>. <em>The Asia-Pacific Journal: Japan Focus</em>, 13(12), 2015.</p>
+<p><a id="ref-5"></a> 5. Maurice Halbwachs. <a target="_blank" rel="noopener noreferrer" href="https://press.uchicago.edu/ucp/books/book/chicago/O/bo3619875.html">On Collective Memory</a>. Lewis A. Coser 编译，University of Chicago Press，1992。</p>
+<p><a id="ref-6"></a> 6. Jiyeoun Song. <a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1017/S1468109918000117">Young people, precarious work, and the development of youth employment policies in Japan</a>. <em>Japanese Journal of Political Science</em>, 19(3), 444–460, 2018.</p>
+<p><a id="ref-7"></a> 7. Leila Scannell、Robert Gifford. <a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/j.jenvp.2009.09.006">Defining place attachment: A tripartite organizing framework</a>. <em>Journal of Environmental Psychology</em>, 30(1), 1–10, 2010.</p>
+<p><a id="ref-8"></a> 8. 高山市：<a target="_blank" rel="noopener noreferrer" href="https://www.city.takayama.lg.jp/shisei/1000058/1001902.html">高山市の概要</a>。</p>
+<p><a id="ref-9"></a> 9. 高山市：<a target="_blank" rel="noopener noreferrer" href="https://www.city.takayama.lg.jp/shisei/1005745/1012576.html">高山市人口ビジョン</a>。</p>
+<p><a id="ref-10"></a> 10. 日本文部科学省：<a target="_blank" rel="noopener noreferrer" href="https://www.mext.go.jp/b_menu/hakusho/html/others/detail/1317449.htm">Student Movements</a>。</p>
+<p><a id="ref-11"></a> 11. 京都动画：<a target="_blank" rel="noopener noreferrer" href="https://www.kyotoanimation.co.jp/kotenbu/story/17/">第 17 话「クドリャフカの順番」</a>。</p>
+<p><a id="ref-12"></a> 12. 京都动画：<a target="_blank" rel="noopener noreferrer" href="https://www.kyotoanimation.co.jp/kotenbu/story/22/">第 22 话「遠まわりする雛」</a>；<a target="_blank" rel="noopener noreferrer" href="https://www.lingq.com/en/learn-japanese-online/courses/714729/hyouka-episode-22-5228160/">LingQ 日文听写稿</a>（非官方，用于对照对白）。</p>
+<p><em>配图来自原稿随附素材。文中中文对白为译文或转述。</em></p>
+</article><nav class="reading-next" aria-label="阅读下一站"><span>下一站 / KEEP EXPLORING</span><a href="&#x2F;2026&#x2F;11&#x2F;21&#x2F;被讨厌的勇气读后感&#x2F;"><small>继续阅读</small><strong>《被讨厌的勇气》读后感 →</strong></a><a class="random-reading" href="&#x2F;2024&#x2F;11&#x2F;07&#x2F;高数笔记——常微分方程&#x2F;" data-choices="[&quot;&#x2F;2026&#x2F;11&#x2F;21&#x2F;被讨厌的勇气读后感&#x2F;&quot;,&quot;&#x2F;2026&#x2F;10&#x2F;18&#x2F;22岁生日寄语&#x2F;&quot;,&quot;&#x2F;2026&#x2F;07&#x2F;22&#x2F;计院优本面试（复试）经验分享&#x2F;&quot;,&quot;&#x2F;2025&#x2F;10&#x2F;25&#x2F;21岁生日寄语&#x2F;&quot;,&quot;&#x2F;2025&#x2F;10&#x2F;22&#x2F;信息安全数学基础实验&#x2F;&quot;,&quot;&#x2F;2024&#x2F;11&#x2F;13&#x2F;编译原理&#x2F;&quot;,&quot;&#x2F;2024&#x2F;11&#x2F;07&#x2F;高数笔记——常微分方程&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;MIPS汇编语言写冒泡排序&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;动态规划总结&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;小猿口算炸鱼cv&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;最小生成树&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;最短路问题合集&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;08&#x2F;线段树&#x2F;&quot;,&quot;&#x2F;2024&#x2F;10&#x2F;07&#x2F;start&#x2F;&quot;]"><small>随机漫游</small><strong>让好奇心选一篇 ↗</strong></a></nav><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://486lv.github.io">Thorn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://486lv.github.io/2026/11/22/%E5%86%B0%E8%8F%93/">https://486lv.github.io/2026/11/22/%E5%86%B0%E8%8F%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://486lv.github.io" target="_blank" rel="noopener noreferrer">Thorn's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%86%B0%E8%8F%93/">冰菓</a><a class="post-meta__tags" href="/tags/%E5%8A%A8%E7%94%BB/">动画</a><a class="post-meta__tags" href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/">观后感</a></div></div><nav class="pagination-post" id="pagination"><a class="next-post pull-full" href="/2026/11/21/%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94%E8%AF%BB%E5%90%8E%E6%84%9F/" title="《被讨厌的勇气》读后感"><img width="1280" height="1708" class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/courage-to-be-disliked.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">《被讨厌的勇气》读后感</div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80%EF%BC%9A%E4%B8%80%E5%9C%BA%E5%A7%8B%E4%BA%8E%E5%A5%BD%E5%A5%87%E5%BF%83%E7%9A%84%E9%9D%92%E6%98%A5"><span class="toc-text">引言：一场始于好奇心的青春</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E6%97%A5%E5%B8%B8%E6%8E%A8%E7%90%86%E7%9A%84%E9%AD%85%E5%8A%9B%EF%BC%9A%E5%B0%8F%E4%BA%8B%E8%83%8C%E5%90%8E%E8%97%8F%E7%9D%80%E4%BA%BA%E7%9A%84%E7%94%9F%E6%B4%BB"><span class="toc-text">一、日常推理的魅力：小事背后藏着人的生活</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E5%86%B0%E8%8F%93-%E4%B8%8E%E5%85%B3%E8%B0%B7%E7%BA%AF%EF%BC%9A%E4%B8%80%E5%A3%B0%E8%BF%9F%E5%88%B0%E4%BA%86%E5%9B%9B%E5%8D%81%E4%BA%94%E5%B9%B4%E7%9A%84%E5%91%90%E5%96%8A"><span class="toc-text">二、《冰菓》与关谷纯：一声迟到了四十五年的呐喊</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%A0%87%E9%A2%98%E8%83%8C%E5%90%8E%E7%9A%84%E5%8F%8C%E5%85%B3%EF%BC%9A%E4%BB%8E-%E6%B0%B7%E8%8F%93-%E5%88%B0-i-scream"><span class="toc-text">2.1 标题背后的双关：从「氷菓」到「I scream」</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E9%9B%86%E4%BD%93%E7%9A%84%E8%8D%A3%E8%AA%89%E4%B8%8E%E4%B8%AA%E4%BA%BA%E7%9A%84%E4%BB%A3%E4%BB%B7"><span class="toc-text">2.2 集体的荣誉与个人的代价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E4%BB%8E%E6%A0%A1%E5%9B%AD%E5%8E%86%E5%8F%B2%E8%B5%B0%E5%90%91%E6%97%A5%E6%9C%AC%E6%88%98%E5%90%8E%E7%A4%BE%E4%BC%9A"><span class="toc-text">2.3 从校园历史走向日本战后社会</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BF%86%EF%BC%9A%E8%B0%81%E6%9C%89%E8%B5%84%E6%A0%BC%E8%AE%B2%E8%BF%B0%E8%BF%87%E5%8E%BB%EF%BC%9F"><span class="toc-text">2.4 历史记忆：谁有资格讲述过去？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E6%8A%98%E6%9C%A8%E5%A5%89%E5%A4%AA%E9%83%8E%EF%BC%9A%E7%81%B0%E8%89%B2%E4%BA%BA%E7%94%9F%E8%A7%82%E4%B8%8E%E9%80%90%E6%B8%90%E6%89%93%E5%BC%80%E7%9A%84%E5%8F%AF%E8%83%BD%E6%80%A7"><span class="toc-text">三、折木奉太郎：灰色人生观与逐渐打开的可能性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E8%8A%82%E8%83%BD%E4%B8%BB%E4%B9%89%EF%BC%9A%E4%B8%8D%E6%84%BF%E6%84%8F%E6%B5%AA%E8%B4%B9%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9D%92%E6%98%A5"><span class="toc-text">3.1 节能主义：不愿意浪费自己的青春</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%81%B0%E8%89%B2%E4%B8%8E%E7%8E%AB%E7%91%B0%E8%89%B2%EF%BC%9A%E4%B8%A4%E7%A7%8D%E9%9D%92%E6%98%A5%E8%A7%82"><span class="toc-text">3.2 灰色与玫瑰色：两种青春观</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E4%B8%8E%E6%B3%A1%E6%B2%AB%E7%BB%8F%E6%B5%8E%E5%90%8E%E6%97%A5%E6%9C%AC%E9%9D%92%E5%B9%B4%E5%BF%83%E7%90%86%E7%9A%84%E8%81%94%E7%B3%BB"><span class="toc-text">3.3 与泡沫经济后日本青年心理的联系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%85%A5%E9%A1%BB%E5%86%AC%E5%AE%9E%EF%BC%9A%E8%A2%AB%E8%AE%A4%E5%8F%AF%E7%9A%84%E8%83%BD%E5%8A%9B%E4%B8%8E%E8%A2%AB%E5%88%A9%E7%94%A8%E7%9A%84%E8%87%AA%E5%B0%8A"><span class="toc-text">3.4 入须冬实：被认可的能力与被利用的自尊</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E5%8D%83%E5%8F%8D%E7%94%B0%E7%88%B1%E7%91%A0%EF%BC%9A%E5%A5%BD%E5%A5%87%E5%BF%83-%E6%95%85%E4%B9%A1%E4%B8%8E%E6%97%A0%E6%B3%95%E5%9B%9E%E9%81%BF%E7%9A%84%E8%B4%A3%E4%BB%BB"><span class="toc-text">四、千反田爱瑠：好奇心、故乡与无法回避的责任</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%A5%BD%E5%A5%87%E5%BF%83%E6%98%AF%E5%A5%B9%E7%90%86%E8%A7%A3%E4%B8%96%E7%95%8C%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">4.1 好奇心是她理解世界的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%8D%83%E5%8F%8D%E7%94%B0%E7%88%B1%E7%91%A0%EF%BC%9A%E5%A4%A7%E5%B0%8F%E5%A7%90%E7%9A%84%E8%BA%AB%E4%BB%BD-%E6%95%85%E4%B9%A1%E4%B8%8E%E6%97%A0%E6%B3%95%E5%9B%9E%E9%81%BF%E7%9A%84%E8%B4%A3%E4%BB%BB"><span class="toc-text">4.2 千反田爱瑠：大小姐的身份、故乡与无法回避的责任</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E7%A5%9E%E5%B1%B1%E5%B8%82%E4%B8%8E%E7%9C%9F%E5%AE%9E%E9%AB%98%E5%B1%B1%E5%B8%82"><span class="toc-text">4.3 神山市与真实高山市</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-%E6%8A%98%E6%9C%A8%E4%B8%8E%E5%8D%83%E5%8F%8D%E7%94%B0%EF%BC%9A%E4%BB%8E%E5%A5%BD%E5%A5%87%E5%88%B0%E7%90%86%E8%A7%A3-%E4%BB%8E%E7%9B%B8%E9%81%87%E5%88%B0%E7%9B%B8%E4%BA%92%E5%BD%B1%E5%93%8D"><span class="toc-text">五、折木与千反田：从好奇到理解，从相遇到相互影响</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E6%8A%98%E6%9C%A8%E4%B8%8E%E5%8D%83%E5%8F%8D%E7%94%B0%EF%BC%9A%E4%B8%A4%E4%B8%AA%E4%BA%BA%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E5%BD%BC%E6%AD%A4"><span class="toc-text">5.1 折木与千反田：两个人如何改变彼此</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E7%BB%95%E8%BF%9C%E8%B7%AF%E7%9A%84%E9%9B%8F%E5%81%B6-%EF%BC%9A%E6%9C%80%E5%90%AB%E8%93%84%E7%9A%84%E5%91%8A%E7%99%BD"><span class="toc-text">5.2 《绕远路的雏偶》：最含蓄的告白</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD-%E7%A6%8F%E9%83%A8%E9%87%8C%E5%BF%97%E4%B8%8E%E4%BC%8A%E5%8E%9F%E6%91%A9%E8%80%B6%E8%8A%B1%EF%BC%9A%E9%9D%92%E6%98%A5%E4%B8%AD%E7%9A%84%E8%87%AA%E5%B0%8A%E4%B8%8E%E4%B8%8D%E7%94%98"><span class="toc-text">六、福部里志与伊原摩耶花：青春中的自尊与不甘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E7%A6%8F%E9%83%A8%E9%87%8C%E5%BF%97%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E6%B3%95%E5%BE%97%E5%87%BA%E7%9A%84%E7%BB%93%E8%AE%BA"><span class="toc-text">6.1 福部里志：数据库无法得出的结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E4%BC%8A%E5%8E%9F%E6%91%A9%E8%80%B6%E8%8A%B1%EF%BC%9A%E8%AE%A4%E7%9C%9F-%E5%9D%9A%E6%8C%81-%E4%BB%A5%E5%8F%8A%E5%BE%97%E4%B8%8D%E5%88%B0%E5%9B%9E%E5%BA%94%E7%9A%84%E6%84%9F%E6%83%85"><span class="toc-text">6.2 伊原摩耶花：认真、坚持，以及得不到回应的感情</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-%E9%9D%92%E6%98%A5%E7%9A%84%E7%BE%8E%E4%B8%BD%E4%B8%8E%E9%81%97%E6%86%BE%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88-%E5%86%B0%E8%8F%93-%E4%BB%A4%E4%BA%BA%E5%9B%9E%E5%91%B3"><span class="toc-text">七、青春的美丽与遗憾：为什么《冰菓》令人回味</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By Thorn</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/vendor/fancybox/fancybox.umd.js"></script><script src="/vendor/lazyload/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-omega-virid.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-omega-virid.vercel.app',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else btf.getScript('/vendor/twikoo/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script defer src="/js/minimal-home.js?v=63812d26d288"></script><script defer src="/js/site-motion.js?v=468c5ca35bba"></script><script src="/vendor/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([href="/footprints/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/local-search.js?v=6c7eb55a2e53"></script></div></div><!-- hexo injector body_end start --><script>window.__THORN_APPEARANCE__={"heroEyebrow":"THORN · NOTES & FIELDWORK","heroTitle":"Thorn's blog","heroSubtitle":"记录计算机学习、工程实践，以及旅途与生活。","primaryActionLabel":"阅读文章","primaryActionHref":"#content-inner","secondaryActionLabel":"关于我","secondaryActionHref":"/about/","showPrimaryAction":true,"showSecondaryAction":true,"cardDensity":"comfortable","motion":"normal","radius":16,"colorMode":"system","heroHeight":520};</script><!-- hexo injector body_end end --></body></html>
